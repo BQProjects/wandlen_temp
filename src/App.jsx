@@ -1,11 +1,11 @@
 import "./App.css";
-import Aran from "./Aran";
+import OurApproach from "./OurApproach";
 
 function App() {
   return (
     <>
       <div className="text-red-400">
-        <Aran />
+        <OurApproach />
       </div>
     </>
   );

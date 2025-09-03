@@ -1,13 +1,13 @@
 import "./App.css";
-import OurApproach from "./OurApproach";
+import { RouterProvider } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
+import { router } from "./routing/router";
 
 function App() {
   return (
-    <>
-      <div className="text-red-400">
-        <OurApproach />
-      </div>
-    </>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   );
 }
 

@@ -29,7 +29,7 @@ const WebsiteHeader = () => (
         Welcome
       </Link>
       <Link
-        to="/"
+        to="/ourapproach"
         className="flex justify-center items-center gap-2.5 body-1 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
       >
         Our approach

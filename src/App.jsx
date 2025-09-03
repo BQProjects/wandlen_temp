@@ -3,11 +3,11 @@ import Aran from "./Aran";
 
 function App() {
   return (
-    <>
-      <div className="text-red-400">
+    <div className="app-container">
+      <section className="hero-section">
         <Aran />
-      </div>
-    </>
+      </section>
+    </div>
   );
 }
 

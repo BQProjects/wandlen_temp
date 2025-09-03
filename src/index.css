@@ -1,2 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@400;600&family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&family=Oswald:wght@400;700&family=Lobster&family=Pacifico&family=Bebas+Neue&family=Anton&display=swap');
+
 @import "tailwindcss";
 
+@theme {
+    --font-family-poppins: 'Poppins', sans-serif;
+    --color-primary: #a6a643;
+    --color-secondary: #ede4dc;
+    --color-accent: #1f1915;
+    --color-muted: #b3b1ac;
+    --color-border: #d9bbaa;
+    --color-dark-green: #2a341f;
+    --color-brown: #381207;
+    --color-dark-olive: #5B6502;
+    /* Add more as needed */
+}

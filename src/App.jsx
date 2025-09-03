@@ -1,13 +1,13 @@
 import "./App.css";
-import Aran from "./Aran";
+import { RouterProvider } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
+import { router } from "./routing/router";
 
 function App() {
   return (
-    <div className="app-container">
-      <section className="hero-section">
-        <Aran />
-      </section>
-    </div>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   );
 }
 

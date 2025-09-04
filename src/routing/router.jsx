@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout";
 import ClientLayout from "../pages/client/ClientLayout";
 import VolunteerLayout from "../pages/volunteer/VolunteerLayout";
-import OurApproach from "../OurApproach";
+import OurApproach from "../pages/website/OurApproach";
 import Login from "../pages/client/Login";
 import PatientProfile from "../pages/client/PatientProfile";
 import OrgLogin from "../pages/organization/Login";
@@ -15,13 +15,15 @@ import VolunteerSignup from "../pages/volunteer/VolunteerSignup";
 import VolunteerProfile from "../pages/volunteer/VolunteerProfile";
 import VolunteerCreateVideo from "../pages/volunteer/VolunteerCreateVideo";
 import SelectVideo from "../pages/client/SelectVideo";
-import Subscribe from "../pages/client/Subscribe";
-import PaymentPageForIndividual from "../pages/client/PaymentPageForIndividual";
+import Subscribe from "../pages/website/Subscribe";
+import PaymentPageForIndividual from "../pages/website/PaymentPageForIndividual";
 import Video from "../pages/client/video";
-import Aran from "../Aran";
+import Aran from "../pages/website/Aran";
 import AllVideos from "../pages/organization/AllVideos";
 import VolunteerHome from "../pages/volunteer/VolunteerHome";
-import BecomeVolunteer from "../BecomeVolunteer";
+import BecomeVolunteer from "../pages/website/BecomeVolunteer";
+import OrganizationLayout from "../pages/organization/OrganizationLayout";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 export const router = createBrowserRouter([
   {
@@ -39,28 +41,6 @@ export const router = createBrowserRouter([
       {
         path: "become-volunteer",
         element: <BecomeVolunteer />,
-      }
-    ],
-  },
-  {
-    path: "/client",
-    element: <ClientLayout />,
-    children: [
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "profile",
-        element: <PatientProfile />,
-      },
-      {
-        path: "select-video",
-        element: <SelectVideo />,
-      },
-      {
-        path: "video",
-        element: <Video />,
       },
       {
         path: "subscribe",
@@ -72,21 +52,62 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  // Authentication routes without layouts (no headers)
+  {
+    path: "/client/login",
+    element: <Login />,
+  },
+  {
+    path: "/organization/login",
+    element: <OrgLogin />,
+  },
+  {
+    path: "/organization/signup",
+    element: <OrgSignup />,
+  },
+  {
+    path: "/volunteer/login",
+    element: <VolunteerLogin />,
+  },
+  {
+    path: "/volunteer/signup",
+    element: <VolunteerSignup />,
+  },
+  // Protected client routes with layout
+  {
+    path: "/client",
+    element: (
+      <ProtectedRoute allowedRoles={["client"]}>
+        <ClientLayout />
+      </ProtectedRoute>
+    ),
+    children: [
+      {
+        path: "profile",
+        element: <PatientProfile />,
+      },
+      {
+        index: true,
+        element: <SelectVideo />,
+      },
+      {
+        path: "video",
+        element: <Video />,
+      },
+    ],
+  },
+  // Organization routes (some with layout, some without)
   {
     path: "/organization",
-    element: <Layout />,
+    element: (
+      <ProtectedRoute allowedRoles={["organization"]}>
+        <OrganizationLayout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         index: true,
         element: <ManageClients />,
-      },
-      {
-        path: "login",
-        element: <OrgLogin />,
-      },
-      {
-        path: "signup",
-        element: <OrgSignup />,
       },
       {
         path: "request-quote",
@@ -102,21 +123,18 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  // Protected volunteer routes with layout
   {
     path: "/volunteer",
-    element: <VolunteerLayout />,
+    element: (
+      <ProtectedRoute allowedRoles={["volunteer"]}>
+        <VolunteerLayout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         index: true,
         element: <VolunteerHome />,
-      },
-      {
-        path: "login",
-        element: <VolunteerLogin />,
-      },
-      {
-        path: "signup",
-        element: <VolunteerSignup />,
       },
       {
         path: "profile",

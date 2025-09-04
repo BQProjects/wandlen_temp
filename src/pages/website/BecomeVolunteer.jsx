@@ -9,8 +9,8 @@ import {
   Instagram,
   Linkedin,
 } from "lucide-react";
-import FaqQuestions from "./components/common/FaqQuestions";
-import Testimonial from "./components/common/TestimonialScroll";
+import FaqQuestions from "../../components/common/FaqQuestions";
+import Testimonial from "../../components/common/TestimonialScroll";
 
 const BecomeVolunteer = () => {
   const [formData, setFormData] = useState({

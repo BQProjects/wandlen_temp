@@ -16,7 +16,7 @@ const VideoAfterRating = () => {
             <div className=" mx-auto">
               {/* Back Button */}
               <Link
-                to="/client/select-video"
+                to="/client/"
                 className="inline-flex items-center gap-3 text-brown hover:text-accent transition-colors mb-8"
               >
                 <svg width={25} height={50} viewBox="0 0 25 50" fill="none">

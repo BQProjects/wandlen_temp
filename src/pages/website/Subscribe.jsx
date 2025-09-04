@@ -119,7 +119,7 @@ const Subscribe = () => {
   const navigate = useNavigate();
 
   const handleCardClick = (plan) => {
-    navigate("/client/payment", { state: { plan } });
+    navigate("/payment", { state: { plan } });
   };
 
   const plans = [

@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import VolunteerHeader from "../../components/VolunteerHeader";
+import VolunteerHeader from "../../components/volunteer/VolunteerHeader";
 
 const VolunteerLayout = () => {
   return (

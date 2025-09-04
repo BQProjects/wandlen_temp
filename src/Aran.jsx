@@ -2,7 +2,7 @@ import React from "react";
 import Background from "./assets/background.png";
 import ForestTrail from "./assets/forest_trail.png";
 import DawnForest from "./components/DawnForest";
-import Scrollcard from './components/scrollcard';
+import Scrollcard from './components/common/scrollcard';
 
 const Aran = () => {
   return (

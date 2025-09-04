@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const VolunteerHeader = () => (
+const ClientHeader = () => (
   <div className="flex justify-between items-center pl-[4.5rem] pr-[4.5rem] p-4 bg-[#ede4dc]">
     <div className="flex flex-col flex-shrink-0 justify-center items-center w-[4.0625rem] h-[5.5625rem]">
       <svg
@@ -23,29 +23,11 @@ const VolunteerHeader = () => (
     </div>
     <div className="flex items-center gap-6">
       <Link
-        to="/"
-        className="flex justify-center items-center gap-2.5 body text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
+        to="/client/select-video"
+        className="flex justify-center items-center gap-2.5 body-2 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
       >
         Welcome
       </Link>
-      <Link
-        to="/"
-        className="flex justify-center items-center gap-2.5 body-1 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
-      >
-        Our approach
-      </Link>
-      <div className="flex justify-center items-center gap-2.5 body-2 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors cursor-pointer">
-        How it works
-      </div>
-      <Link
-        to="/volunteer/create-video"
-        className="flex justify-center items-center gap-2.5 body-3 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
-      >
-        Create video
-      </Link>
-      <div className="flex justify-center items-center gap-2.5 body-4 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors cursor-pointer">
-        Blog
-      </div>
       <div className="flex justify-center items-center gap-2">
         <svg
           width={24}
@@ -59,7 +41,7 @@ const VolunteerHeader = () => (
             fill="#4B4741"
           />
         </svg>
-        <div className="body-5 text-[#4b4741] font-['Poppins'] text-xl font-medium leading-[136%]">
+        <div className="body-4 text-[#4b4741] font-['Poppins'] text-xl font-medium leading-[136%]">
           English
         </div>
         <svg
@@ -75,22 +57,24 @@ const VolunteerHeader = () => (
           />
         </svg>
       </div>
-      <div className="flex justify-center items-center cursor-pointer hover:opacity-80 transition-opacity">
-        <svg
-          width={48}
-          height={48}
-          viewBox="0 0 48 48"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M24 0C10.752 0 0 10.752 0 24C0 37.248 10.752 48 24 48C37.248 48 48 37.248 48 24C48 10.752 37.248 0 24 0ZM24 9.6C28.632 9.6 32.4 13.368 32.4 18C32.4 22.632 28.632 26.4 24 26.4C19.368 26.4 15.6 22.632 15.6 18C15.6 13.368 19.368 9.6 24 9.6ZM24 43.2C19.128 43.2 13.368 41.232 9.264 36.288C13.4684 32.9909 18.657 31.1991 24 31.1991C29.343 31.1991 34.5316 32.9909 38.736 36.288C34.632 41.232 28.872 43.2 24 43.2Z"
-            fill="#381207"
-          />
-        </svg>
-      </div>
+      <Link to="/client/profile">
+        <div className="flex justify-center items-center cursor-pointer hover:opacity-80 transition-opacity">
+          <svg
+            width={48}
+            height={48}
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 0C10.752 0 0 10.752 0 24C0 37.248 10.752 48 24 48C37.248 48 48 37.248 48 24C48 10.752 37.248 0 24 0ZM24 9.6C28.632 9.6 32.4 13.368 32.4 18C32.4 22.632 28.632 26.4 24 26.4C19.368 26.4 15.6 22.632 15.6 18C15.6 13.368 19.368 9.6 24 9.6ZM24 43.2C19.128 43.2 13.368 41.232 9.264 36.288C13.4684 32.9909 18.657 31.1991 24 31.1991C29.343 31.1991 34.5316 32.9909 38.736 36.288C34.632 41.232 28.872 43.2 24 43.2Z"
+              fill="#381207"
+            />
+          </svg>
+        </div>
+      </Link>
     </div>
   </div>
 );
 
-export default VolunteerHeader;
+export default ClientHeader;

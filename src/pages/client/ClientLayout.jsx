@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import OrganizationFamilyHeader from "../../components/OrganizationFamilyHeader";
+import ClientHeader from "../../components/client/ClientHeader";
 
 const ClientLayout = () => {
   return (
     <div className="min-h-screen">
-      <OrganizationFamilyHeader />
+      <ClientHeader />
       <main className="">
         <Outlet />
       </main>

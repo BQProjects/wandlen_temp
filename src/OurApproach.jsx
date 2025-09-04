@@ -4,8 +4,8 @@ import PlantSvg from "./assets/plant.svg";
 import ScrollDown from "./assets/scrollDown.svg";
 import PartnersSection from "./components/PartnersSection";
 import OurWalking from "./components/WhyVirtualWalking";
-import Testimonial from "./components/TestimonialScroll";
-import FaqQuestions from "./components/FaqQuestions";
+import Testimonial from "./components/common/TestimonialScroll";
+import FaqQuestions from "./components/common/FaqQuestions";
 
 const OurApproach = () => {
   const handleScrollDown = () => {

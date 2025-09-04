@@ -19,6 +19,9 @@ import Subscribe from "../pages/client/Subscribe";
 import PaymentPageForIndividual from "../pages/client/PaymentPageForIndividual";
 import Video from "../pages/client/video";
 import Aran from "../Aran";
+import AllVideos from "../pages/organization/AllVideos";
+import VolunteerHome from "../pages/volunteer/VolunteerHome";
+import BecomeVolunteer from "../BecomeVolunteer";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +36,10 @@ export const router = createBrowserRouter([
         path: "ourapproach",
         element: <OurApproach />, // Our Approach page
       },
+      {
+        path: "become-volunteer",
+        element: <BecomeVolunteer />,
+      }
     ],
   },
   {
@@ -70,6 +77,10 @@ export const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
+        index: true,
+        element: <ManageClients />,
+      },
+      {
         path: "login",
         element: <OrgLogin />,
       },
@@ -82,12 +93,12 @@ export const router = createBrowserRouter([
         element: <RequestAQuoteForm />,
       },
       {
-        path: "manage-clients",
-        element: <ManageClients />,
-      },
-      {
         path: "profile",
         element: <OrganizationProfile />,
+      },
+      {
+        path: "all-videos",
+        element: <AllVideos />,
       },
     ],
   },
@@ -95,6 +106,10 @@ export const router = createBrowserRouter([
     path: "/volunteer",
     element: <VolunteerLayout />,
     children: [
+      {
+        index: true,
+        element: <VolunteerHome />,
+      },
       {
         path: "login",
         element: <VolunteerLogin />,

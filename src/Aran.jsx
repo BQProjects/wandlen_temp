@@ -1,8 +1,13 @@
 import React from "react";
 import Background from "./assets/background.png";
-import ForestTrail from "./assets/forest_trail.png";
-import DawnForest from "./components/DawnForest";
-import Scrollcard from './components/scrollcard';
+import Background2 from "./assets/Background2.png";
+import ForestTrail from "./assets/forest_trail.png";;
+import Testimonial from "./components/TestimonialScroll";
+import FaqQuestions from "./components/FaqQuestions";
+import WhyVirtualWalking from "./components/WhyVirtualWalking";
+import SubscribeCard from "./components/SubscribeCard";
+import Footer from "./components/Footer";
+import RequestCard from "./components/RequestCard";
 
 const Aran = () => {
   return (
@@ -119,7 +124,7 @@ const Aran = () => {
           </div>
         </div>
       </div>
-      <DawnForest/>
+      <WhyVirtualWalking/>
       
       {/* Discover Nature Videos Section */}
       <div className="flex-shrink-0 w-full min-h-[941px] bg-[#eeebc6] flex flex-col items-center justify-center py-16 px-8">
@@ -288,7 +293,100 @@ const Aran = () => {
           </div>
         </div>
       </div>
-      <Scrollcard />
+
+      {/* Discover Routes Near You Section */}
+      <div className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url(${Background2})`}}>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        
+        {/* Content */}
+        <div className="relative z-10 w-full h-full py-16 px-8">
+          <div className="max-w-[1280px] mx-auto">
+            {/* Header Section */}
+            <div className="mb-16">
+              <div className="text-[#a6a643] font-['Poppins'] text-lg font-medium mb-4 tracking-tight">
+                Discover Routes Near You
+              </div>
+              <div className="text-white font-['Poppins'] text-4xl lg:text-5xl font-bold leading-tight max-w-[800px]">
+                Explore beautiful journeys from participating municipalities.
+              </div>
+            </div>
+
+            {/* Location Buttons */}
+            <div className="flex items-center gap-4 mb-16 flex-wrap">
+              {/* Left Arrow */}
+              <button className="flex items-center justify-center w-12 h-12 rounded-full border border-white/30 text-white hover:bg-white/10 transition-all">
+                <svg width={20} height={20} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+
+              {/* Location Buttons */}
+              <div className="flex gap-4 flex-wrap">
+                <button className="px-6 py-3 rounded-lg border border-white/30 text-white font-['Poppins'] hover:bg-white/10 transition-all">
+                  Dalfsen
+                </button>
+                <button className="px-6 py-3 rounded-lg border border-white/30 text-white font-['Poppins'] hover:bg-white/10 transition-all">
+                  Deventer
+                </button>
+                <button className="px-6 py-3 rounded-lg border border-white/30 text-white font-['Poppins'] hover:bg-white/10 transition-all">
+                  Haaksbergen
+                </button>
+                <button className="px-6 py-3 rounded-lg border border-white/30 text-white font-['Poppins'] hover:bg-white/10 transition-all">
+                  Hellendoorn
+                </button>
+                <button className="px-6 py-3 rounded-lg border border-white/30 text-white font-['Poppins'] hover:bg-white/10 transition-all">
+                  Hof van Twente
+                </button>
+                <button className="px-6 py-3 rounded-lg border border-white/30 text-white font-['Poppins'] hover:bg-white/10 transition-all">
+                  Olst-Wijhe
+                </button>
+                <button className="px-6 py-3 rounded-lg border border-white/30 text-white font-['Poppins'] hover:bg-white/10 transition-all">
+                  Ommen
+                </button>
+              </div>
+
+              {/* Right Arrow */}
+              <button className="flex items-center justify-center w-12 h-12 rounded-full border border-white/30 text-white hover:bg-white/10 transition-all">
+                <svg width={20} height={20} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
+
+            {/* Bottom Section */}
+            <div className="space-y-6">
+              <div className="text-white font-['Poppins'] text-xl font-medium">
+                Your Turn to Inspire – New Every Month!
+              </div>
+              
+              <div className="space-y-4 max-w-[600px]">
+                <div className="text-white/90 font-['Poppins'] leading-relaxed">
+                  Have a scenic or special route we haven't covered yet?
+                </div>
+                <div className="text-white/90 font-['Poppins'] leading-relaxed">
+                  Log in and submit your favorite – we might feature it in our next video!
+                </div>
+                <div className="text-white/90 font-['Poppins'] leading-relaxed">
+                  We publish new videos and community-suggested routes every month,
+                </div>
+                <div className="text-white/90 font-['Poppins'] leading-relaxed">
+                  so keep exploring and stay inspired.
+                </div>
+              </div>
+
+              <button className="inline-flex items-center px-8 py-3 rounded-lg bg-[#a6a643] text-white font-['Poppins'] text-lg font-medium hover:bg-[#8a8f39] transition-all">
+                Explore this feature
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <RequestCard />
+      <Testimonial />
+      <FaqQuestions />
+      <SubscribeCard />
+      <Footer />
     </>
   );
 };

@@ -18,6 +18,7 @@ import SelectVideo from "../pages/client/SelectVideo";
 import Subscribe from "../pages/client/Subscribe";
 import PaymentPageForIndividual from "../pages/client/PaymentPageForIndividual";
 import Video from "../pages/client/video";
+import Aran from "../Aran";
 
 export const router = createBrowserRouter([
   {
@@ -26,7 +27,11 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <OurApproach />, // Landing page
+        element: <Aran />, // Landing page
+      },
+      {
+        path: "ourapproach",
+        element: <OurApproach />, // Our Approach page
       },
     ],
   },

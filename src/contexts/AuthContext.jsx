@@ -13,7 +13,36 @@ export const AuthProvider = ({ children }) => {
 
     if (savedUser && savedUserType) {
       setUser(JSON.parse(savedUser));
-      setUserType(savedUserType);
+      setUserType(savedUserType);   //testing Purpose
+    } else {
+      // TEMPORARY: Simulate different roles for testing
+      // Change the role here to test: "client", "organization", "volunteer"
+      const testRole = "volunteer";
+
+      const testUsers = {
+        client: {
+          id: 1,
+          name: "John Client",
+          email: "john@client.com",
+        },
+        organization: {
+          id: 2,
+          name: "Care Center Org",
+          email: "admin@carecenter.com",
+        },
+        volunteer: {
+          id: 3,
+          name: "Jane Volunteer",
+          email: "jane@volunteer.com",
+        },
+      };
+
+      if (testUsers[testRole]) {
+        setUser(testUsers[testRole]);
+        setUserType(testRole);
+        localStorage.setItem("user", JSON.stringify(testUsers[testRole]));
+        localStorage.setItem("userType", testRole);
+      }
     }
   }, []);
 

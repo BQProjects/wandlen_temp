@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import LeftArrow from "../assets/LeftArrow.svg";
-import RightArrow from "../assets/RightArrow.svg";
+import LeftArrow from "../../assets/LeftArrow.svg";
+import RightArrow from "../../assets/RightArrow.svg";
 
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

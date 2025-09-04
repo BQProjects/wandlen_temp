@@ -1,11 +1,14 @@
 import React from "react";
-import deermountain from "./assets/deermountain.jpg";
-import PlantSvg from "./assets/plant.svg";
-import ScrollDown from "./assets/scrollDown.svg";
-import PartnersSection from "./components/PartnersSection";
-import OurWalking from "./components/WhyVirtualWalking";
-import Testimonial from "./components/TestimonialScroll";
-import FaqQuestions from "./components/FaqQuestions";
+import deermountain from "../../assets/deermountain.jpg";
+import PlantSvg from "../../assets/plant.svg";
+import ScrollDown from "../../assets/scrollDown.svg";
+import PartnersSection from "../../components/PartnersSection";
+import OurWalking from "../../components/WhyVirtualWalking";
+import Testimonial from "../../components/common/TestimonialScroll";
+import FaqQuestions from "../../components/common/FaqQuestions";
+import Button from "@mui/material/Button";
+import ChooseYourExperience from "./ChoseYourExperience";
+import { Link } from "react-router-dom";
 
 const OurApproach = () => {
   const handleScrollDown = () => {
@@ -48,9 +51,12 @@ const OurApproach = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-2.5 py-2 px-5 rounded-lg bg-primary  text-white font-poppins text-xl font-medium leading-[136%]">
+            <Link
+              to="/choose-experience"
+              className="flex items-center gap-2.5 py-2 px-5 rounded-lg bg-primary text-white font-poppins text-xl font-medium leading-[136%]"
+            >
               Start Your Journey
-            </div>
+            </Link>
           </div>
         </div>
       </div>

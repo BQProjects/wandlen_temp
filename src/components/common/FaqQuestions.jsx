@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import SearchIcon from "../assets/SearchIcon.svg";
-import DownArrow from "../assets/DownArrow.svg";
+import SearchIcon from "../../assets/SearchIcon.svg";
+import DownArrow from "../../assets/DownArrow.svg";
 
 const FaqQuestions = () => {
   const [openIndex, setOpenIndex] = useState(null);

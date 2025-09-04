@@ -1,27 +1,13 @@
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../contexts/AuthContext";
+import React from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useContext } from "react";
 
-const WebsiteHeader = () => {
+const OrganizationFamilyHeader = () => {
   const { user, userType, isAuthenticated, logout } = useContext(AuthContext);
-  const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
-    navigate("/");
-  };
-
-  const getDashboardLink = () => {
-    switch (userType) {
-      case "client":
-        return "/client";
-      case "organization":
-        return "/organization";
-      case "volunteer":
-        return "/volunteer";
-      default:
-        return "/";
-    }
   };
 
   return (
@@ -44,97 +30,19 @@ const WebsiteHeader = () => {
           />
         </svg>
       </div>
-
       <div className="flex items-center gap-6">
-        {/* Public Navigation - Always visible */}
         <Link
-          to="/"
+          to="/organization/"
           className="flex justify-center items-center gap-2.5 body text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
         >
           Welcome
         </Link>
         <Link
-          to="/ourapproach"
-          className="flex justify-center items-center gap-2.5 body-1 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
+          to="/organization/all-videos"
+          className="flex justify-center items-center gap-2.5 body-2 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
         >
-          Our approach
+          All Videos
         </Link>
-
-        {/* Role-based Navigation */}
-        {isAuthenticated ? (
-          <>
-            {/* Dashboard link for all authenticated users */}
-            <Link
-              to={getDashboardLink()}
-              className="flex justify-center items-center gap-2.5 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
-            >
-              Dashboard
-            </Link>
-
-            {/* Logout button */}
-            <button
-              onClick={handleLogout}
-              className="flex justify-center items-center gap-2.5 py-2 px-4 rounded-lg bg-[#381207] text-white text-center font-['Poppins'] text-xl font-medium leading-[136%] hover:bg-[#4a3a2a] transition-colors"
-            >
-              Logout
-            </button>
-          </>
-        ) : (
-          <>
-            {/* Non-authenticated user navigation */}
-            <Link
-              to="/become-volunteer"
-              className="flex justify-center items-center gap-2.5 body-2 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
-            >
-              Become a volunteer
-            </Link>
-            <Link
-              to="/subscribe"
-              className="flex justify-center items-center gap-2.5 body-3 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
-            >
-              Subscriptions
-            </Link>
-
-            {/* Login options dropdown */}
-            <div className="relative group">
-              <button className="flex justify-center items-center gap-2.5 py-2 px-4 rounded-lg bg-[#381207] text-white text-center font-['Poppins'] text-xl font-medium leading-[136%] hover:bg-[#4a3a2a] transition-colors">
-                Log in
-                <svg width={16} height={16} viewBox="0 0 16 16" fill="none">
-                  <path
-                    d="M4 6L8 10L12 6"
-                    stroke="white"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <Link
-                  to="/client/login"
-                  className="block px-4 py-3 text-[#381207] hover:bg-[#ede4dc] rounded-t-lg transition-colors"
-                >
-                  Client Login
-                </Link>
-                <Link
-                  to="/organization/login"
-                  className="block px-4 py-3 text-[#381207] hover:bg-[#ede4dc] transition-colors"
-                >
-                  Organization Login
-                </Link>
-                <Link
-                  to="/volunteer/login"
-                  className="block px-4 py-3 text-[#381207] hover:bg-[#ede4dc] rounded-b-lg transition-colors"
-                >
-                  Volunteer Login
-                </Link>
-              </div>
-            </div>
-          </>
-        )}
-
-        {/* Language selector - always visible */}
         <div className="flex justify-center items-center gap-2">
           <svg
             width={24}
@@ -148,7 +56,7 @@ const WebsiteHeader = () => {
               fill="#4B4741"
             />
           </svg>
-          <div className="body-5 text-[#4b4741] font-['Poppins'] text-xl font-medium leading-[136%]">
+          <div className="body-4 text-[#4b4741] font-['Poppins'] text-xl font-medium leading-[136%]">
             English
           </div>
           <svg
@@ -164,9 +72,32 @@ const WebsiteHeader = () => {
             />
           </svg>
         </div>
+        <Link to="/organization/profile" className="w-12 h-12">
+          <div className="flex justify-center items-center cursor-pointer hover:opacity-80 transition-opacity">
+            <svg
+              width={48}
+              height={48}
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0C10.752 0 0 10.752 0 24C0 37.248 10.752 48 24 48C37.248 48 48 37.248 48 24C48 10.752 37.248 0 24 0ZM24 9.6C28.632 9.6 32.4 13.368 32.4 18C32.4 22.632 28.632 26.4 24 26.4C19.368 26.4 15.6 22.632 15.6 18C15.6 13.368 19.368 9.6 24 9.6ZM24 43.2C19.128 43.2 13.368 41.232 9.264 36.288C13.4684 32.9909 18.657 31.1991 24 31.1991C29.343 31.1991 34.5316 32.9909 38.736 36.288C34.632 41.232 28.872 43.2 24 43.2Z"
+                fill="#381207"
+              />
+            </svg>
+          </div>
+        </Link>
+        {/* Logout button */}
+        <button
+          onClick={handleLogout}
+          className="flex justify-center items-center gap-2.5 py-2 px-4 rounded-lg bg-[#381207] text-white text-center font-['Poppins'] text-xl font-medium leading-[136%] hover:bg-[#4a3a2a] transition-colors"
+        >
+          Logout
+        </button>
       </div>
     </div>
   );
-};
+}
 
-export default WebsiteHeader;
+export default OrganizationFamilyHeader;

@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
     } else {
       // TEMPORARY: Simulate different roles for testing
       // Change the role here to test: "client", "organization", "volunteer"
-      const testRole = "volunteer"; // 🔄 CHANGE THIS TO TEST DIFFERENT ROLES
+      const testRole = "volunteer";
 
       const testUsers = {
         client: {

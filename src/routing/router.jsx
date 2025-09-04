@@ -7,7 +7,7 @@ import Login from "../pages/client/Login";
 import PatientProfile from "../pages/client/PatientProfile";
 import OrgLogin from "../pages/organization/Login";
 import OrgSignup from "../pages/organization/Signup";
-import RequestAQuoteForm from "../pages/organization/RequestAQuoteForm";
+import RequestAQuoteForm from "../pages/website/RequestAQuoteForm";
 import ManageClients from "../pages/organization/ManageClients";
 import OrganizationProfile from "../pages/organization/OrganizationProfile";
 import VolunteerLogin from "../pages/volunteer/VolunteerLogin";
@@ -24,6 +24,12 @@ import VolunteerHome from "../pages/volunteer/VolunteerHome";
 import BecomeVolunteer from "../pages/website/BecomeVolunteer";
 import OrganizationLayout from "../pages/organization/OrganizationLayout";
 import ProtectedRoute from "../components/ProtectedRoute";
+import HowItWorks from "../pages/volunteer/HOwItWork";
+import VideoTraining from "../pages/website/VideoTraning";
+import CameraTips from "../pages/website/CameraTips";
+import NatureWalking from "../pages/website/NatureWalking";
+import VolunteerSignupForm from "../pages/website/VolunteerSignup";
+import ChooseYourExperience from "../pages/website/ChoseYourExperience";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +55,34 @@ export const router = createBrowserRouter([
       {
         path: "payment",
         element: <PaymentPageForIndividual />,
+      },
+      {
+        path: "video-training",
+        element: <VideoTraining />,
+      },
+      {
+        path: "camera-tips",
+        element: <CameraTips />,
+      },
+      {
+        path: "nature-walking",
+        element: <NatureWalking />,
+      },
+      {
+        path: "volunteer-signup",
+        element: <VolunteerSignupForm />,
+      },
+      {
+        path: "request-quote",
+        element: <RequestAQuoteForm />,
+      },
+      {
+        path: "/request-quote",
+        element: <RequestAQuoteForm />,
+      },
+      {
+        path: "/choose-experience",
+        element: <ChooseYourExperience />,
       },
     ],
   },
@@ -110,10 +144,6 @@ export const router = createBrowserRouter([
         element: <ManageClients />,
       },
       {
-        path: "request-quote",
-        element: <RequestAQuoteForm />,
-      },
-      {
         path: "profile",
         element: <OrganizationProfile />,
       },
@@ -143,6 +173,10 @@ export const router = createBrowserRouter([
       {
         path: "create-video",
         element: <VolunteerCreateVideo />,
+      },
+      {
+        path: "/volunteer/how-it-works",
+        element: <HowItWorks />,
       },
     ],
   },

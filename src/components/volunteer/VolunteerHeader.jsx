@@ -37,9 +37,12 @@ const VolunteerHeader = () => {
         >
           Welcome
         </Link>
-        <div className="flex justify-center items-center gap-2.5 body-2 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors cursor-pointer">
+        <Link
+          to="/volunteer/how-it-works"
+          className="flex justify-center items-center gap-2.5 body-2 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors cursor-pointer"
+        >
           How it works
-        </div>
+        </Link>
         <Link
           to="/volunteer/create-video"
           className="flex justify-center items-center gap-2.5 body-3 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"

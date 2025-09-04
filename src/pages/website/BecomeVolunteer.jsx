@@ -9,6 +9,7 @@ import {
   Instagram,
   Linkedin,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import FaqQuestions from "../../components/common/FaqQuestions";
 import Testimonial from "../../components/common/TestimonialScroll";
 
@@ -178,9 +179,71 @@ const BecomeVolunteer = () => {
           </div>
         </div>
       </section>
-      <FaqQuestions />
+
+      {/* Events Section */}
+      <section className="bg-[#ede4dc] px-4 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="space-y-12">
+            {[
+              {
+                date: "19",
+                month: "Sep",
+                title: "Video Training",
+                description:
+                  "Learn how to get started as a volunteer. We'll introduce you to Virtual Walking, explain the basics, and guide you through the first steps.",
+                link: "/video-training",
+              },
+              {
+                date: "24",
+                month: "Sep",
+                title: "Camera Tips & Introduction",
+                description:
+                  "Join a short hands-on session where you'll discover how to film calming nature walks and use the provided equipment with ease.",
+                link: "/camera-tips",
+              },
+              {
+                date: "03",
+                month: "Oct",
+                title: "Nature Walk Filming Practice",
+                description:
+                  "Head outdoors with your camera and practice capturing beautiful nature walks. Enthusiasm counts more than experience!",
+                link: "/nature-walking",
+              },
+            ].map((event, index) => (
+              <div
+                key={index}
+                className="flex flex-col md:flex-row items-start md:items-center gap-6 bg-white p-6 rounded-xl shadow-sm"
+              >
+                <div className="bg-[#381207] text-[#ede4dc] rounded-lg p-4 text-center min-w-[110px]">
+                  <div className="text-4xl font-bold">{event.date}</div>
+                  <div className="text-xl font-medium">{event.month}</div>
+                </div>
+
+                <div className="bg-gray-300 w-full md:w-60 h-48 md:h-40 rounded-lg bg-gradient-to-br from-orange-200 to-orange-400 flex items-center justify-center flex-shrink-0">
+                  <span className="text-gray-600">Event Image</span>
+                </div>
+
+                <div className="flex-1 space-y-4">
+                  <h3 className="text-[#dd9219] text-2xl font-semibold">
+                    {event.title}
+                  </h3>
+                  <p className="text-[#381207] text-lg leading-relaxed">
+                    {event.description}
+                  </p>
+                  <Link to={event.link}>
+                    <button className="bg-[#a6a643] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#959837] transition-colors">
+                      More Information
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <Testimonial />
 
+      <FaqQuestions />
       {/* Why Volunteers Section */}
       <section className="bg-[#1f1915] text-white px-4 py-16">
         <div className="max-w-7xl mx-auto">
@@ -345,145 +408,6 @@ const BecomeVolunteer = () => {
           </div>
         </div>
       </section>
-
-      {/* Events Section */}
-      <section className="bg-[#ede4dc] px-4 py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="space-y-12">
-            {[
-              {
-                date: "19",
-                month: "Sep",
-                title: "Video Training",
-                description:
-                  "Learn how to get started as a volunteer. We'll introduce you to Virtual Walking, explain the basics, and guide you through the first steps.",
-              },
-              {
-                date: "24",
-                month: "Sep",
-                title: "Camera Tips & Introduction",
-                description:
-                  "Join a short hands-on session where you'll discover how to film calming nature walks and use the provided equipment with ease.",
-              },
-              {
-                date: "03",
-                month: "Oct",
-                title: "Nature Walk Filming Practice",
-                description:
-                  "Head outdoors with your camera and practice capturing beautiful nature walks. Enthusiasm counts more than experience!",
-              },
-            ].map((event, index) => (
-              <div
-                key={index}
-                className="flex flex-col md:flex-row items-start md:items-center gap-6 bg-white p-6 rounded-xl shadow-sm"
-              >
-                <div className="bg-[#381207] text-[#ede4dc] rounded-lg p-4 text-center min-w-[110px]">
-                  <div className="text-4xl font-bold">{event.date}</div>
-                  <div className="text-xl font-medium">{event.month}</div>
-                </div>
-
-                <div className="bg-gray-300 w-full md:w-60 h-48 md:h-40 rounded-lg bg-gradient-to-br from-orange-200 to-orange-400 flex items-center justify-center flex-shrink-0">
-                  <span className="text-gray-600">Event Image</span>
-                </div>
-
-                <div className="flex-1 space-y-4">
-                  <h3 className="text-[#dd9219] text-2xl font-semibold">
-                    {event.title}
-                  </h3>
-                  <p className="text-[#381207] text-lg leading-relaxed">
-                    {event.description}
-                  </p>
-                  <button className="bg-[#a6a643] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#959837] transition-colors">
-                    More Information
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-[#2a341f] text-[#ede4dc] px-4 py-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <div className="w-20 h-14 bg-black rounded flex items-center justify-center">
-                <span className="text-white text-sm">Logo</span>
-              </div>
-              <p className="text-sm">© 2025 Virtueel Wandelen</p>
-              <p className="text-sm">Terms and Conditions | Privacy Policy</p>
-              <p className="font-medium">Virtueel Wandelen</p>
-            </div>
-
-            <div className="space-y-3">
-              <h4 className="text-lg font-medium">Menu</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <a href="#" className="hover:text-[#a6a643]">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-[#a6a643]">
-                    Our Vision
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-[#a6a643]">
-                    Subscriptions
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="space-y-3">
-              <h4 className="text-lg font-medium">Contact ons</h4>
-              <div className="space-y-2 text-sm">
-                <div className="flex items-start gap-2">
-                  <MapPin size={16} className="mt-1 flex-shrink-0" />
-                  <div>
-                    <p>Dominee C. Keersstraat 79</p>
-                    <p>8151 AB Lemelerveld</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone size={16} />
-                  <p>06-43754290</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail size={16} />
-                  <p>info@virtueelwandelen.nl</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              <h4 className="text-lg font-medium">Socials</h4>
-              <div className="space-y-2 text-sm">
-                <div className="flex items-center gap-2">
-                  <Facebook size={16} />
-                  <a href="#" className="hover:text-[#a6a643] underline">
-                    Facebook
-                  </a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Instagram size={16} />
-                  <a href="#" className="hover:text-[#a6a643] underline">
-                    Instagram
-                  </a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Linkedin size={16} />
-                  <a href="#" className="hover:text-[#a6a643] underline">
-                    LinkedIn
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

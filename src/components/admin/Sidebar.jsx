@@ -127,7 +127,7 @@ const AdminSidebar = () => {
   };
 
   return (
-    <div className="inline-flex flex-col flex-shrink-0 items-start gap-2 py-0 px-4 min-h-screen bg-white shadow-[0_0_4px_0_rgba(0,0,0,0.25)]">
+    <div className="inline-flex flex-col flex-shrink-0 items-start gap-2 py-0 px-4 min-h-screen bg-white shadow-[0_0_4px_0_rgba(0,0,0,0.25)] font-base">
       <div className="flex items-center gap-2 py-4 px-2 w-full">
         <div className="flex flex-col flex-shrink-0 justify-center items-center pb-[0.002px] w-[0.8125rem] h-[1.125rem] aspect-[13/18]">
           <svg
@@ -147,20 +147,19 @@ const AdminSidebar = () => {
             />
           </svg>
         </div>
-        <div className="flex flex-col flex-shrink-0 justify-center w-[3.625rem] h-4 text-[#7a756e] text-center font-['Poppins'] text-lg leading-[normal]">
+        <div className="flex flex-col flex-shrink-0 justify-center w-[3.625rem] h-4 text-muted-foreground text-center font-base text-lg leading-[normal]">
           ADMIN
         </div>
       </div>
       {menuItems.map((item) => (
         <div
           key={item.path}
-          className={`flex items-center gap-2 p-2 w-full rounded cursor-pointer ${
-            location.pathname === item.path ? "bg-[#d9bbaa]" : ""
-          }`}
+          className={`flex items-center gap-2 p-2 w-full rounded cursor-pointer ${location.pathname === item.path ? "bg-border" : ""
+            }`}
           onClick={() => navigate(item.path)}
         >
           {item.icon}
-          <div className="flex-shrink-0 w-full text-[#381207] font-['Poppins'] text-lg leading-[normal]">
+          <div className="flex-shrink-0 w-full text-brown font-base text-lg leading-[normal]">
             {item.label}
           </div>
         </div>
@@ -186,7 +185,7 @@ const AdminSidebar = () => {
             fill="#381207"
           />
         </svg>
-        <div className="flex-shrink-0 w-full text-[#381207] font-['Poppins'] text-lg leading-[normal]">
+        <div className="flex-shrink-0 w-full text-brown font-base text-lg leading-[normal]">
           Logout
         </div>
       </div>

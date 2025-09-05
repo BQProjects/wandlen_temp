@@ -41,11 +41,11 @@ const BecomeVolunteer = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#ede4dc]">
+    <div className="min-h-screen bg-secondary">
       {/* Hero Section */}
-      <section className="bg-[#2a341f] text-white px-4 py-16 flex items-center justify-center">
+      <section className="bg-dark-green text-white px-4 py-16 flex items-center justify-center">
         <div className="max-w-7xl mx-auto text-center mt-20 mb-20">
-          <h1 className="text-4xl md:text-5xl font-semibold text-[#a6a643] mb-6 font-['Poppins']">
+          <h1 className="text-4xl md:text-5xl font-semibold text-primary mb-6 font-['Poppins']">
             Become a Volunteer with Virtual Walking
           </h1>
           <p className="text-xl md:text-2xl font-medium max-w-4xl mx-auto leading-relaxed">
@@ -57,7 +57,7 @@ const BecomeVolunteer = () => {
         </div>
       </section>
       {/* Events Section */}
-      <section className="bg-[#ede4dc] px-4 py-16">
+      <section className="bg-secondary px-4 py-16">
         <div className="max-w-7xl mx-auto">
           <div className="space-y-12">
             {[
@@ -93,7 +93,7 @@ const BecomeVolunteer = () => {
                 key={index}
                 className="flex flex-col md:flex-row items-start md:items-center gap-6 bg-white p-6 rounded-xl shadow-sm"
               >
-                <div className="bg-[#381207] text-[#ede4dc] rounded-lg p-4 text-center min-w-[110px]">
+                <div className="bg-brown text-secondary rounded-lg p-4 text-center min-w-[110px]">
                   <div className="text-4xl font-bold">{event.date}</div>
                   <div className="text-xl font-medium">{event.month}</div>
                 </div>
@@ -106,14 +106,14 @@ const BecomeVolunteer = () => {
                 </div>
 
                 <div className="flex-1 space-y-4">
-                  <h3 className="text-[#dd9219] text-2xl font-semibold">
+                  <h3 className="text-primary text-2xl font-semibold">
                     {event.title}
                   </h3>
-                  <p className="text-[#381207] text-lg leading-relaxed">
+                  <p className="text-brown text-lg leading-relaxed">
                     {event.description}
                   </p>
                   <Link to={event.link}>
-                    <button className="bg-[#a6a643] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#959837] transition-colors">
+                    <button className="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-dark-olive transition-colors">
                       More Information
                     </button>
                   </Link>
@@ -125,12 +125,12 @@ const BecomeVolunteer = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="bg-[#2a341f] text-white px-4 py-16">
+      <section className="bg-dark-green text-white px-4 py-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div>
-                <p className="text-[#a6a643] text-2xl font-semibold mb-2">
+                <p className="text-primary text-2xl font-semibold mb-2">
                   Positive Benefits
                 </p>
                 <h2 className="text-4xl md:text-5xl font-semibold mb-8">
@@ -147,10 +147,10 @@ const BecomeVolunteer = () => {
                 ].map((benefit, index) => (
                   <div
                     key={index}
-                    className="flex items-start gap-3 py-3 border-b border-[#e5e3df]/20"
+                    className="flex items-start gap-3 py-3 border-b border-border/20"
                   >
                     <Check
-                      className="text-[#a6a643] mt-1 flex-shrink-0"
+                      className="text-primary mt-1 flex-shrink-0"
                       size={24}
                     />
                     <p className="text-lg leading-relaxed">{benefit}</p>
@@ -160,13 +160,13 @@ const BecomeVolunteer = () => {
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <button
-                  className="bg-[#a6a643] text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-[#959837] transition-colors"
+                  className="bg-primary text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-dark-olive transition-colors"
                   onClick={() => (window.location.href = "/volunteer/signup")}
                 >
                   Join as Volunteer
                 </button>
                 <button
-                  className="bg-[#a6a643] text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-[#959837] transition-colors"
+                  className="bg-primary text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-dark-olive transition-colors"
                   onClick={() => (window.location.href = "/volunteer/login")}
                 >
                   Already a Volunteer
@@ -185,18 +185,18 @@ const BecomeVolunteer = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="bg-[#ede4dc] px-4 py-16">
+      <section className="bg-secondary px-4 py-16">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <p className="text-[#a6a643] text-2xl font-semibold mb-2">
+              <p className="text-primary text-2xl font-semibold mb-2">
                 How it works
               </p>
-              <h2 className="text-4xl md:text-5xl font-semibold text-[#381207]">
+              <h2 className="text-4xl md:text-5xl font-semibold text-brown">
                 Joining is easy — just follow these steps
               </h2>
             </div>
-            <button className="bg-[#a6a643] text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-[#959837] transition-colors hidden lg:block">
+            <button className="bg-primary text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-dark-olive transition-colors hidden lg:block">
               Know More
             </button>
           </div>
@@ -232,16 +232,16 @@ const BecomeVolunteer = () => {
                 key={step.number}
                 className="bg-[#f7f6f4] rounded-2xl p-8 space-y-6"
               >
-                <div className="w-16 h-16 bg-[#ede4dc] rounded-full flex items-center justify-center">
-                  <span className="text-[#381207] text-3xl font-semibold">
+                <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center">
+                  <span className="text-brown text-3xl font-semibold">
                     {step.number}
                   </span>
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-[#381207] text-2xl font-medium">
+                  <h3 className="text-brown text-2xl font-medium">
                     {step.title}
                   </h3>
-                  <p className="text-[#381207] leading-relaxed">
+                  <p className="text-brown leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -251,7 +251,7 @@ const BecomeVolunteer = () => {
         </div>
       </section>
       {/* Why Volunteers Section */}
-      <section className="bg-[#1f1915] text-white">
+      <section className="bg-accent text-white">
         <div>
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             <div className="rounded-2xl h-full flex items-center justify-center">
@@ -264,10 +264,10 @@ const BecomeVolunteer = () => {
 
             <div className="space-y-8 py-8 px-4">
               <div>
-                <p className="text-[#a6a643] text-2xl font-semibold mb-2">
+                <p className="text-primary text-2xl font-semibold mb-2">
                   Want to help?
                 </p>
-                <h2 className="text-4xl md:text-5xl font-semibold text-[#ede4dc]">
+                <h2 className="text-4xl md:text-5xl font-semibold text-secondary">
                   Why Volunteers Are Essential
                 </h2>
               </div>
@@ -301,24 +301,24 @@ const BecomeVolunteer = () => {
                   },
                 ].map((item, index) => (
                   <div key={index}>
-                    <div className="w-full h-px bg-[#d9bbaa] mb-6"></div>
+                    <div className="w-full h-px bg-border mb-6"></div>
                     <div className="flex items-start gap-3">
                       <Check
-                        className="text-[#a6a643] mt-1 flex-shrink-0"
+                        className="text-primary mt-1 flex-shrink-0"
                         size={24}
                       />
                       <div>
                         <h3 className="text-2xl font-semibold mb-2">
                           {item.title}
                         </h3>
-                        <p className="text-[#b3b1ac] leading-relaxed">
+                        <p className="text-muted leading-relaxed">
                           {item.description}
                         </p>
                       </div>
                     </div>
                   </div>
                 ))}
-                <div className="w-full h-px bg-[#d9bbaa]"></div>
+                <div className="w-full h-px bg-border"></div>
               </div>
             </div>
           </div>

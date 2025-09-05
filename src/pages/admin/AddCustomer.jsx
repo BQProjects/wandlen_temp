@@ -13,11 +13,11 @@ const AddCustomer = () => {
   };
 
   return (
-    <div className="flex-1 bg-white p-6 max-w-4xl mx-auto">
+    <div className="flex-1 bg-white p-6 max-w-4xl mx-auto font-base">
       <div className="flex items-center gap-4 mb-6">
         <button
           onClick={handleBack}
-          className="text-[#381207] hover:text-[#a6a643]"
+          className="text-brown hover:text-brand"
         >
           <svg
             width={25}
@@ -32,59 +32,59 @@ const AddCustomer = () => {
             />
           </svg>
         </button>
-        <h1 className="text-2xl font-semibold text-[#381207]">Add Customer</h1>
+        <h1 className="text-2xl font-semibold text-brown">Add Customer</h1>
       </div>
 
       {/* Customer & Plan Details - Moved to Top */}
       <div className="mb-10">
-        <h2 className="text-2xl font-medium text-[#7a756e] mb-4">
+        <h2 className="text-2xl font-medium text-muted-foreground mb-4">
           Customer & Plan Details
         </h2>
-        <div className="p-6 rounded-2xl bg-[#ede4dc]">
-          <div className="text-[#381207] font-['Poppins'] text-lg font-medium mb-4">
+        <div className="p-6 rounded-2xl bg-secondary">
+          <div className="text-brown font-base text-lg font-medium mb-4">
             Complete the User & Plan Information
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[#381207] font-['Poppins'] font-medium mb-2">
+              <label className="block text-brown font-base font-medium mb-2">
                 Amount Paid
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#b3b1ac] text-[#4b4741] font-['Poppins']"
+                className="input"
                 defaultValue="€ 120,00"
               />
             </div>
             <div>
-              <label className="block text-[#381207] font-['Poppins'] font-medium mb-2">
+              <label className="block text-brown font-base font-medium mb-2">
                 Plan Valid From
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#b3b1ac] text-[#4b4741] font-['Poppins']"
+                className="input"
                 defaultValue="01-07-2025"
               />
             </div>
             <div>
-              <label className="block text-[#381207] font-['Poppins'] font-medium mb-2">
+              <label className="block text-brown font-base font-medium mb-2">
                 Plan Valid To
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#b3b1ac] text-[#4b4741] font-['Poppins']"
+                className="input"
                 defaultValue="31-08-2026"
               />
             </div>
             <div>
-              <label className="block text-[#381207] font-['Poppins'] font-medium mb-2">
+              <label className="block text-brown font-base font-medium mb-2">
                 No. of Users
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#b3b1ac] text-[#4b4741] font-['Poppins']"
+                className="input"
                 defaultValue="10 users"
               />
             </div>
           </div>
           <div className="mt-6 flex justify-end">
             <button
-              className="px-6 py-2 rounded-lg bg-[#5b6502] text-white font-['Poppins'] font-medium hover:bg-[#4a5201]"
+              className="px-6 py-2 rounded-lg btn btn-secondary"
               onClick={handleCreateUser}
             >
               Create User
@@ -96,79 +96,79 @@ const AddCustomer = () => {
       <div className="space-y-10">
         {/* Organization Details */}
         <div>
-          <h2 className="text-2xl font-medium text-[#7a756e] mb-4">
+          <h2 className="text-2xl font-medium text-muted-foreground mb-4">
             Organization Details
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="md:col-span-2">
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Organization Name
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="Sunrise Wellness Center"
               />
             </div>
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Contact Email
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="info@sunrisewellness.nl"
               />
             </div>
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Phone Number
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="+31 6 9876 5432"
               />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Address
               </label>
               <textarea
-                className="w-full h-20 px-4 py-2 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins'] resize-none"
+                className="input h-20 py-2 resize-none"
                 defaultValue="Dominee C. Keersstraat 798, 8151 AB, Lemelerveld"
               ></textarea>
             </div>
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Street
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="Dominee C. Keersstraat 798"
               />
             </div>
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Postal Code
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="8151 AB"
               />
             </div>
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 City
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="Lemelerveld"
               />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Website Link
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="https://www.sunrisewellness.nl"
               />
             </div>
@@ -177,43 +177,43 @@ const AddCustomer = () => {
 
         {/* Contact Person */}
         <div>
-          <h2 className="text-2xl font-medium text-[#7a756e] mb-4">
+          <h2 className="text-2xl font-medium text-muted-foreground mb-4">
             Contact Person
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Full Name
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="Anna Jansen"
               />
             </div>
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Job Title / Position
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="Activities Coordinator"
               />
             </div>
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Email Address
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="anna.jansen@sunrisewellness.nl"
               />
             </div>
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Phone Number
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="+31 6 2345 6789"
               />
             </div>
@@ -222,30 +222,30 @@ const AddCustomer = () => {
 
         {/* Organization & Target Group */}
         <div>
-          <h2 className="text-2xl font-medium text-[#7a756e] mb-4">
+          <h2 className="text-2xl font-medium text-muted-foreground mb-4">
             Organization & Target Group
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Total Number of Clients
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="45"
               />
             </div>
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Number of Locations
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="2 care homes, 1 daycare center"
               />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-[#7a756e] font-['Poppins'] font-medium mb-2">
+              <label className="block text-muted-foreground font-base font-medium mb-2">
                 Target group(s) for which the platform will be used
               </label>
               <div className="flex flex-wrap gap-4">
@@ -262,7 +262,7 @@ const AddCustomer = () => {
                       fill="#DD9219"
                     />
                   </svg>
-                  <span className="text-[#2a341f] font-['Poppins'] text-sm">
+                  <span className="text-dark-green font-base text-sm">
                     Dementia
                   </span>
                 </div>
@@ -279,7 +279,7 @@ const AddCustomer = () => {
                       fill="#DD9219"
                     />
                   </svg>
-                  <span className="text-[#2a341f] font-['Poppins'] text-sm">
+                  <span className="text-dark-green font-base text-sm">
                     Day care
                   </span>
                 </div>
@@ -296,7 +296,7 @@ const AddCustomer = () => {
                       fill="#D0D0D0"
                     />
                   </svg>
-                  <span className="text-[#2a341f] font-['Poppins'] text-sm">
+                  <span className="text-dark-green font-base text-sm">
                     Rehabilitation
                   </span>
                 </div>
@@ -313,7 +313,7 @@ const AddCustomer = () => {
                       fill="#D0D0D0"
                     />
                   </svg>
-                  <span className="text-[#2a341f] font-['Poppins'] text-sm">
+                  <span className="text-dark-green font-base text-sm">
                     Other
                   </span>
                 </div>
@@ -324,25 +324,25 @@ const AddCustomer = () => {
 
         {/* Use of Virtual Walking */}
         <div>
-          <h2 className="text-2xl font-medium text-[#7a756e] mb-4">
+          <h2 className="text-2xl font-medium text-muted-foreground mb-4">
             Use of Virtual Walking
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Estimated number of clients who will use the platform
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="20 clients per week"
               />
             </div>
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Desired start date of use
               </label>
               <input
-                className="w-full h-11 px-4 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins']"
+                className="input"
                 defaultValue="01 October 2025"
               />
             </div>
@@ -351,12 +351,12 @@ const AddCustomer = () => {
 
         {/* Onboarding */}
         <div>
-          <h2 className="text-2xl font-medium text-[#7a756e] mb-4">
+          <h2 className="text-2xl font-medium text-muted-foreground mb-4">
             Onboarding
           </h2>
           <div className="space-y-4">
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Do you need onboarding and integration support?
               </label>
               <div className="flex gap-4">
@@ -377,7 +377,7 @@ const AddCustomer = () => {
                       fill="#DD9219"
                     />
                   </svg>
-                  <span className="text-[#2a341f] font-['Poppins'] text-sm">
+                  <span className="text-dark-green font-base text-sm">
                     Yes
                   </span>
                 </div>
@@ -394,31 +394,31 @@ const AddCustomer = () => {
                       fill="#D0D0D0"
                     />
                   </svg>
-                  <span className="text-[#2a341f] font-['Poppins'] text-sm">
+                  <span className="text-dark-green font-base text-sm">
                     No
                   </span>
                 </div>
               </div>
               <textarea
-                className="w-full h-20 px-4 py-2 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins'] resize-none"
+                className="input h-20 py-2 resize-none"
                 defaultValue="We’d like guidance for staff during setup."
               ></textarea>
             </div>
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Additional services or custom solutions you are interested in?
               </label>
               <textarea
-                className="w-full h-20 px-4 py-2 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins'] resize-none"
+                className="input h-20 py-2 resize-none"
                 defaultValue="Interested in Virtual Walking Experience Box with scent & sound modules (€93 each)."
               ></textarea>
             </div>
             <div>
-              <label className="block text-[#7a756e] font-['Poppins'] text-sm mb-2">
+              <label className="block text-muted-foreground font-base text-sm mb-2">
                 Notes
               </label>
               <textarea
-                className="w-full h-20 px-4 py-2 rounded-lg border border-[#cbcbcb] text-[#381207] font-['Poppins'] resize-none"
+                className="input h-20 py-2 resize-none"
                 defaultValue="Please send invoice details to our finance department. Accessibility support for visually impaired clients needed."
               ></textarea>
             </div>

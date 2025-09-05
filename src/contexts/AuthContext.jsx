@@ -35,6 +35,11 @@ export const AuthProvider = ({ children }) => {
           name: "Jane Volunteer",
           email: "jane@volunteer.com",
         },
+        admin: {
+          id: 4,
+          name: "Admin User",
+          email: "admin@brainquest.com",
+        },
       };
 
       if (testUsers[testRole]) {

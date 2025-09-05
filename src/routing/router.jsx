@@ -30,6 +30,18 @@ import CameraTips from "../pages/website/CameraTips";
 import NatureWalking from "../pages/website/NatureWalking";
 import VolunteerSignupForm from "../pages/website/VolunteerSignup";
 import ChooseYourExperience from "../pages/website/ChoseYourExperience";
+import AdminLogin from "../pages/admin/AdminLogin";
+import AdminLayout from "../pages/admin/AdminLayout";
+import AdminDashboard from "../pages/admin/AdminDashboard";
+import ManageQuote from "../pages/admin/ManageQuote";
+import AddCustomer from "../pages/admin/AddCustomer";
+import OrganizationCreated from "../pages/admin/OrganizationCreated";
+import ManageVolunteer from "../pages/admin/ManageVolunteer";
+import VolunteerDetail from "../pages/admin/VolunteerDetail";
+import LocationRequest from "../pages/admin/LocationRequest";
+import ManageVideos from "../pages/admin/ManageVideos";
+import ManageSubscription from "../pages/admin/ManageSubscription";
+import SubscriptionOverview from "../pages/admin/SubscriptionOverview";
 
 export const router = createBrowserRouter([
   {
@@ -181,10 +193,58 @@ export const router = createBrowserRouter([
     ],
   },
   // Admin routes can be added here when needed
-  // {
-  //   path: 'admin',
-  //   children: [
-  //     // Admin routes
-  //   ],
-  // },
+  {
+    path: "/admin/login",
+    element: <AdminLogin />,
+  },
+  {
+    path: "/admin",
+    element: (
+      <ProtectedRoute allowedRoles={["admin"]}>
+        <AdminLayout />
+      </ProtectedRoute>
+    ),
+    children: [
+      {
+        index: true,
+        element: <AdminDashboard />,
+      },
+      {
+        path: "manage",
+        element: <ManageQuote />,
+      },
+      {
+        path: "add-customer",
+        element: <AddCustomer />,
+      },
+      {
+        path: "organization-created",
+        element: <OrganizationCreated />,
+      },
+      {
+        path: "manage-volunteer",
+        element: <ManageVolunteer />,
+      },
+      {
+        path: "volunteer-detail",
+        element: <VolunteerDetail />,
+      },
+      {
+        path: "location-request",
+        element: <LocationRequest />,
+      },
+      {
+        path: "manage-videos",
+        element: <ManageVideos />,
+      },
+      {
+        path: "manage-subscription",
+        element: <ManageSubscription />,
+      },
+      {
+        path: "subscription-overview",
+        element: <SubscriptionOverview />,
+      },
+    ],
+  },
 ]);

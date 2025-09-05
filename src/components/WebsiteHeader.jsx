@@ -19,6 +19,8 @@ const WebsiteHeader = () => {
         return "/organization";
       case "volunteer":
         return "/volunteer";
+      case "admin":
+        return "/admin";
       default:
         return "/";
     }

@@ -1,13 +1,19 @@
 import "./App.css";
-import Aran from "./Aran";
+import { RouterProvider } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
+import { DatabaseProvider } from "./contexts/DatabaseContext";
+import { StateManagementProvider } from "./contexts/StateManagementContext";
+import { router } from "./routing/router";
 
 function App() {
   return (
-    <>
-      <div className="text-red-400">
-        <Aran />
-      </div>
-    </>
+    <DatabaseProvider>
+      <AuthProvider>
+        <StateManagementProvider>
+          <RouterProvider router={router} />
+        </StateManagementProvider>
+      </AuthProvider>
+    </DatabaseProvider>
   );
 }
 

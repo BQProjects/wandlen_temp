@@ -28,30 +28,30 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="relative flex-shrink-0 h-[400px] bg-accent">
+    <div className="relative flex-shrink-0 h-[300px] md:h-[400px] bg-accent px-4 md:px-0">
       <img
         src={LeftArrow}
         alt="Previous"
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
+        className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 cursor-pointer w-6 h-6 md:w-auto md:h-auto"
         onClick={prevTestimonial}
       />
-      <div className="flex flex-col justify-center items-center gap-10 w-[864px] mx-auto h-full">
-        <div className="flex flex-col items-start gap-2 self-stretch">
-          <div className="self-stretch text-primary text-center font-['Poppins'] text-[2rem] font-semibold leading-[136%]">
+      <div className="flex flex-col justify-center items-center gap-6 md:gap-10 w-full max-w-[864px] mx-auto h-full px-4 md:px-0">
+        <div className="flex flex-col items-center gap-2 self-stretch text-center">
+          <div className="self-stretch text-primary font-['Poppins'] text-xl md:text-[2rem] font-semibold leading-[136%]">
             Testimonial
           </div>
-          <div className="self-stretch text-secondary text-center font-['Poppins'] text-5xl font-semibold leading-[136%]">
+          <div className="self-stretch text-secondary font-['Poppins'] text-2xl md:text-5xl font-semibold leading-[136%]">
             Our Success Stories
           </div>
         </div>
-        <div className="flex justify-center items-center w-[864px] h-[3.375rem] flex-shrink-0 text-secondary text-center font-['Poppins'] text-xl leading-[136%]">
+        <div className="flex justify-center items-center w-full max-w-[864px] min-h-[3.375rem] flex-shrink-0 text-secondary text-center font-['Poppins'] text-base md:text-xl leading-[136%] px-4">
           {testimonials[currentIndex].text}
         </div>
-        <div className="flex justify-center items-center gap-2 mt-4">
+        <div className="flex justify-center items-center gap-2 mt-2 md:mt-4">
           {testimonials.map((_, index) => (
             <div
               key={index}
-              className={`w-3 h-3 rounded-full cursor-pointer transition-colors duration-300 ${
+              className={`w-2 h-2 md:w-3 md:h-3 rounded-full cursor-pointer transition-colors duration-300 ${
                 index === currentIndex
                   ? "bg-primary"
                   : "bg-secondary opacity-50"
@@ -64,7 +64,7 @@ const Testimonial = () => {
       <img
         src={RightArrow}
         alt="Next"
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
+        className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 cursor-pointer w-6 h-6 md:w-auto md:h-auto"
         onClick={nextTestimonial}
       />
     </div>

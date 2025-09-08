@@ -89,11 +89,7 @@ export const router = createBrowserRouter([
         element: <RequestAQuoteForm />,
       },
       {
-        path: "/request-quote",
-        element: <RequestAQuoteForm />,
-      },
-      {
-        path: "/choose-experience",
+        path: "choose-experience",
         element: <ChooseYourExperience />,
       },
     ],

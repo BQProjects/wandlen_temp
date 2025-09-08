@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navigation from "../../Navigation";
 import { useNavigate } from "react-router-dom";
 
 // Subscription Card Component
@@ -15,9 +14,9 @@ const SubscriptionCard = ({
   onClick,
 }) => (
   <div
-    className={`relative flex flex-col items-center gap-6 p-8 rounded-2xl bg-secondary-soft shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${isPopular ? "ring-primary scale-105" : ""
-      } font-base`}
-    onClick={onClick}
+    className={`relative flex flex-col items-center gap-6 p-8 rounded-2xl bg-secondary-soft shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${
+      isPopular ? "ring-primary scale-105" : ""
+    } font-base`}
   >
     {isPopular && (
       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -37,7 +36,7 @@ const SubscriptionCard = ({
     </div>
 
     <div className="flex flex-col items-center gap-4 w-full">
-      <button className="w-full py-3 px-6 btn btn-secondary">
+      <button onClick={onClick} className="w-full py-3 px-6 btn btn-secondary">
         {buttonText}
       </button>
       <p className="text-sm text-muted-foreground text-center">{trialText}</p>
@@ -165,19 +164,21 @@ const Subscribe = () => {
           <div className="bg-white p-1 rounded-lg shadow-md">
             <button
               onClick={() => setBillingPeriod("monthly")}
-              className={`px-6 py-2 rounded-md font-medium transition-all ${billingPeriod === "monthly"
-                ? "bg-olive text-white shadow-md"
-                : "text-brown hover:bg-gray-100"
-                }`}
+              className={`px-6 py-2 rounded-md font-medium transition-all ${
+                billingPeriod === "monthly"
+                  ? "bg-olive text-white shadow-md"
+                  : "text-brown hover:bg-gray-100"
+              }`}
             >
               Monthly
             </button>
             <button
               onClick={() => setBillingPeriod("yearly")}
-              className={`px-6 py-2 rounded-md font-medium transition-all relative ${billingPeriod === "yearly"
-                ? "bg-olive text-white shadow-md"
-                : "text-brown hover:bg-gray-100"
-                }`}
+              className={`px-6 py-2 rounded-md font-medium transition-all relative ${
+                billingPeriod === "yearly"
+                  ? "bg-olive text-white shadow-md"
+                  : "text-brown hover:bg-gray-100"
+              }`}
             >
               Yearly
               {billingPeriod === "yearly" && (

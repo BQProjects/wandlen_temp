@@ -1,5 +1,6 @@
 import React from "react";
 import Background from "../../assets/background.png";
+import BgVideo from "../../assets/BgVideo.mp4";
 import ForestTrail from "../../assets/forest_trail.png";
 import DawnForest from "../../../src/components/DawnForest";
 import Scrollcard from "../../../src/components/common/scrollcard";
@@ -101,6 +102,22 @@ const Aran = () => {
         </div>
         <div className="hero-background">
           <img src={Background} alt="Nature background" />
+          {/* <video
+            src={BgVideo}
+            alt="Nature background"
+            autoPlay
+            muted
+            loop
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              zIndex: -1,
+            }}
+          /> */}
           <div className="overlay"></div>
         </div>
       </div>

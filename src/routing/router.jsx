@@ -17,7 +17,7 @@ import VolunteerCreateVideo from "../pages/volunteer/VolunteerCreateVideo";
 import SelectVideo from "../pages/client/SelectVideo";
 import Subscribe from "../pages/website/Subscribe";
 import PaymentPageForIndividual from "../pages/website/PaymentPageForIndividual";
-import Video from "../pages/client/video";
+import VideoClient from "../pages/client/video";
 import Aran from "../pages/website/Aran";
 import AllVideos from "../pages/organization/AllVideos";
 import VolunteerHome from "../pages/volunteer/VolunteerHome";
@@ -42,6 +42,7 @@ import LocationRequest from "../pages/admin/LocationRequest";
 import ManageVideos from "../pages/admin/ManageVideos";
 import ManageSubscription from "../pages/admin/ManageSubscription";
 import SubscriptionOverview from "../pages/admin/SubscriptionOverview";
+import VideoVolunteer from "../pages/volunteer/Video";
 
 export const router = createBrowserRouter([
   {
@@ -133,8 +134,8 @@ export const router = createBrowserRouter([
         element: <SelectVideo />,
       },
       {
-        path: "video",
-        element: <Video />,
+        path: "video/:id",
+        element: <VideoClient />,
       },
     ],
   },
@@ -185,6 +186,10 @@ export const router = createBrowserRouter([
       {
         path: "/volunteer/how-it-works",
         element: <HowItWorks />,
+      },
+      {
+        path: "video/:id",
+        element: <VideoVolunteer />,
       },
     ],
   },

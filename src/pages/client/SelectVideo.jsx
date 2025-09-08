@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import BgVideo from "../../assets/BgVideo.mp4";
 
 // Filter Button Component
 const FilterButton = ({ label, onClick, isActive = false }) => (
@@ -38,10 +39,11 @@ const VideoCard = ({ title, duration, location, thumbnail, onSelect }) => (
     onClick={onSelect}
   >
     <div className="relative h-48 bg-gradient-to-br from-[#d4c4b7] to-[#c4b49a]">
-      <img
+      <video
         src={thumbnail}
         alt={title}
         className="w-full h-full object-cover"
+        muted
         onError={(e) => {
           e.target.style.display = "none";
         }}
@@ -124,42 +126,42 @@ const SelectVideo = () => {
       title: "Korte wandeling Holterberg",
       duration: "15 min",
       location: "Holterberg, Nederland",
-      thumbnail: "/api/placeholder/300/200",
+      thumbnail: BgVideo,
     },
     {
       id: 2,
       title: "Boswandeling met vogels",
       duration: "25 min",
       location: "Veluwe, Nederland",
-      thumbnail: "/api/placeholder/300/200",
+      thumbnail: BgVideo,
     },
     {
       id: 3,
       title: "Strandwandeling zonsondergang",
       duration: "30 min",
       location: "Noordzee kust",
-      thumbnail: "/api/placeholder/300/200",
+      thumbnail: BgVideo,
     },
     {
       id: 4,
       title: "Bergpad met uitzicht",
       duration: "20 min",
       location: "Drenthe, Nederland",
-      thumbnail: "/api/placeholder/300/200",
+      thumbnail: BgVideo,
     },
     {
       id: 5,
       title: "Rustige rivierwandeling",
       duration: "18 min",
       location: "IJssel, Nederland",
-      thumbnail: "/api/placeholder/300/200",
+      thumbnail: BgVideo,
     },
     {
       id: 6,
       title: "Herfstkleuren in het bos",
       duration: "22 min",
       location: "Utrechtse Heuvelrug",
-      thumbnail: "/api/placeholder/300/200",
+      thumbnail: BgVideo,
     },
   ];
 
@@ -171,10 +173,8 @@ const SelectVideo = () => {
     );
   };
 
-  const handleVideoSelect = (videoId) => {
-    console.log("Selected video:", videoId);
-    // Navigate to the video page
-    navigate("/client/video");
+  const handleVideoSelect = (id) => {
+    navigate(`video/${id}`);
   };
 
   return (

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import UserIcon from "../../assets/UserIcon.svg";
 
 const OrganizationProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -37,20 +38,7 @@ const OrganizationProfile = () => {
         <div className="relative z-10 flex items-center justify-between h-full px-8">
           <div className="flex items-center gap-6">
             <div className="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center">
-              <svg width={32} height={32} viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z"
-                  stroke="#381207"
-                  strokeWidth="2"
-                />
-                <path
-                  d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22"
-                  stroke="#381207"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <img src={UserIcon} alt="User Icon" />
             </div>
             <div>
               <h1 className="text-4xl font-medium text-white mb-2">
@@ -60,88 +48,6 @@ const OrganizationProfile = () => {
                 Remove Image
               </button>
             </div>
-          </div>
-
-          <div className="flex items-center gap-6">
-            <nav className="flex gap-6">
-              <a
-                href="#"
-                className="text-white text-lg font-medium hover:text-gray-200 transition"
-              >
-                Home
-              </a>
-              <a
-                href="#"
-                className="text-white text-lg font-medium hover:text-gray-200 transition"
-              >
-                All Videos
-              </a>
-            </nav>
-            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-              <svg width={24} height={24} viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z"
-                  stroke="white"
-                  strokeWidth="2"
-                />
-                <path
-                  d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        {/* Settings Dropdown */}
-        <div className="absolute top-4 right-4">
-          <div className="bg-white rounded-lg p-2 shadow-lg">
-            <button className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 rounded">
-              <svg width={20} height={20} viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z"
-                  stroke="#381207"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="3"
-                  stroke="#381207"
-                  strokeWidth="2"
-                />
-              </svg>
-              <span className="text-sm font-medium">Account Settings</span>
-            </button>
-            <button className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 rounded">
-              <svg width={20} height={20} viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V16"
-                  stroke="#381207"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M14 8L18 12L14 16"
-                  stroke="#381207"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M10 12H18"
-                  stroke="#381207"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="text-sm font-medium">Log Out</span>
-            </button>
           </div>
         </div>
       </div>

@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import UploadIcon from "../../assets/UploadIcon.svg";
 import LinkIcon from "../../assets/LinkIcon.svg";
 
 const VolunteerCreateVideo = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { editMode = false, videoId = null } = location.state || {};
+
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -17,6 +22,54 @@ const VolunteerCreateVideo = () => {
 
   const [coverImage, setCoverImage] = useState(null);
   const [videoFile, setVideoFile] = useState(null);
+
+  // Load video data if in edit mode
+  useEffect(() => {
+    if (editMode && videoId) {
+      // TODO: In a real app, you would fetch video data from API
+      // For now, we'll simulate loading data from the videos array used in VolunteerHome
+      const mockVideoData = {
+        1: {
+          title: "Korte wandeling Holterberg",
+          description: "A peaceful walk through the Holterberg forest",
+          duration: "15 min",
+          location: "Hellendoorn, Nederland",
+          season: "Lente",
+          natureType: "Bos",
+          soundStimuli: "Vogels",
+          animals: "Wilde dieren",
+          tags: "Opkomende zon, Kinderen, Wilde dieren, Bos",
+        },
+        2: {
+          title: "Boswandeling met vogels",
+          description: "Forest walk with beautiful bird sounds",
+          duration: "25 min",
+          location: "Lemele, Nederland",
+          season: "Winter",
+          natureType: "Bos",
+          soundStimuli: "Vogels",
+          animals: "Vogels",
+          tags: "Winter, Sneeuw, Gouden gras, Vogels, Bos",
+        },
+        // Add more mock data as needed
+      };
+
+      const videoData = mockVideoData[videoId];
+      if (videoData) {
+        setFormData({
+          title: videoData.title,
+          description: videoData.description,
+          duration: videoData.duration,
+          location: videoData.location,
+          season: videoData.season,
+          natureType: videoData.natureType,
+          soundStimuli: videoData.soundStimuli,
+          animals: videoData.animals,
+          tags: videoData.tags,
+        });
+      }
+    }
+  }, [editMode, videoId]);
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -38,36 +91,54 @@ const VolunteerCreateVideo = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Integrate with backend API
-    console.log("Creating video:", { ...formData, coverImage, videoFile });
-    // Example: const formDataObj = new FormData();
-    // formDataObj.append('coverImage', coverImage);
-    // formDataObj.append('videoFile', videoFile);
-    // formDataObj.append('metadata', JSON.stringify(formData));
-    // fetch('/api/volunteer/create-video', { method: 'POST', body: formDataObj });
+    if (editMode) {
+      // TODO: Integrate with backend API for updating video
+      console.log("Updating video:", {
+        id: videoId,
+        ...formData,
+        coverImage,
+        videoFile,
+      });
+      // Example: updateVideo(videoId, formDataObj).then(() => navigate('/volunteer'));
+      alert("Video updated successfully!");
+      navigate("/volunteer");
+    } else {
+      // TODO: Integrate with backend API for creating video
+      console.log("Creating video:", { ...formData, coverImage, videoFile });
+      // Example: createVideo(formDataObj).then(() => navigate('/volunteer'));
+      alert("Video created successfully!");
+      navigate("/volunteer");
+    }
   };
 
   const handleCancel = () => {
-    setFormData({
-      title: "",
-      description: "",
-      duration: "",
-      location: "",
-      season: "",
-      natureType: "",
-      soundStimuli: "",
-      animals: "",
-      tags: "",
-    });
-    setCoverImage(null);
-    setVideoFile(null);
+    if (editMode) {
+      // If in edit mode, navigate back without clearing form
+      navigate("/volunteer");
+    } else {
+      //clear form data
+      setFormData({
+        title: "",
+        description: "",
+        duration: "",
+        location: "",
+        season: "",
+        natureType: "",
+        soundStimuli: "",
+        animals: "",
+        tags: "",
+      });
+      setCoverImage(null);
+      setVideoFile(null);
+      navigate("/volunteer");
+    }
   };
 
   return (
     <div className="min-h-screen bg-white py-8 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-medium text-[#381207] text-center mb-8">
-          Create Video
+          {editMode ? "Edit Video" : "Create Video"}
         </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
@@ -359,7 +430,7 @@ const VolunteerCreateVideo = () => {
                 type="submit"
                 className="px-6 py-2 bg-[#a6a643] text-white rounded-lg hover:bg-[#8b8b3a] transition font-medium"
               >
-                Submit
+                {editMode ? "Update Video" : "Submit"}
               </button>
             </div>
           </form>

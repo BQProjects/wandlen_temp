@@ -20,6 +20,7 @@ import RequestAQuoteForm from "../pages/website/RequestAQuoteForm";
 import Subscribe from "../pages/website/Subscribe";
 import VideoTraining from "../pages/website/VideoTraning";
 import VolunteerSignupForm from "../pages/website/VolunteerSignup";
+import Blog from "../pages/website/Blog";
 
 // Client page imports (alphabetized)
 import Login from "../pages/client/Login";
@@ -79,6 +80,10 @@ export const router = createBrowserRouter([
       {
         path: "subscribe",
         element: <Subscribe />,
+      },
+      {
+        path: "blog",
+        element: <Blog />,
       },
       {
         path: "payment",

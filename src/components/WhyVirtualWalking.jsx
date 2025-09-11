@@ -5,7 +5,7 @@ import BrainIcon from "../assets/BrainIcon.svg";
 import UserGroupIcon from "../assets/UserGroupIcon.svg";
 
 const WhyVirtualWalking = () => (
-  <div className="flex flex-col md:flex-row w-full md:w-11/12 bg-accent mx-auto">
+  <div className="flex flex-col md:flex-row w-full  bg-accent mx-auto">
     <div className="w-full md:w-1/2 h-64 md:h-full">
       <img
         src={OrangeWood}

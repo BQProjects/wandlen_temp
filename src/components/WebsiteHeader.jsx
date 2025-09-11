@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 
 const WebsiteHeader = () => {
   const { user, userType, isAuthenticated, logout } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [hoveredItem, setHoveredItem] = useState(null);
+  const [activeItem, setActiveItem] = useState(null);
 
   const handleLogout = () => {
     logout();
@@ -46,95 +48,147 @@ const WebsiteHeader = () => {
       </div>
 
       <div className="flex items-center gap-6">
-        {/* Public Navigation - Always visible */}
         <Link
           to="/"
-          className="flex justify-center items-center gap-2.5 body text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
+          className="header_text flex flex-col justify-center items-start"
+          onMouseEnter={() => setHoveredItem('welcome')}
+          onMouseLeave={() => setHoveredItem(null)}
+          onClick={() => setActiveItem('welcome')}
         >
-          Welcome
+          <div className="body text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%]">
+            Welcome
+          </div>
+          {(hoveredItem === 'welcome' || activeItem === 'welcome') && (
+            <div className="w-[1.5625rem] h-0.5 bg-[#381207]" />
+          )}
         </Link>
         <Link
           to="/ourapproach"
-          className="flex justify-center items-center gap-2.5 body-1 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
+          className="header_text flex flex-col justify-center items-start"
+          onMouseEnter={() => setHoveredItem('ourapproach')}
+          onMouseLeave={() => setHoveredItem(null)}
+          onClick={() => setActiveItem('ourapproach')}
         >
-          Our approach
+          <div className="body text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%]">
+            Our approach
+          </div>
+          {(hoveredItem === 'ourapproach' || activeItem === 'ourapproach') && (
+            <div className="w-[1.5625rem] h-0.5 bg-[#381207]" />
+          )}
         </Link>
 
-        {/* Role-based Navigation */}
         {isAuthenticated ? (
           <>
-            {/* Dashboard link for all authenticated users */}
             <Link
               to={getDashboardLink()}
-              className="flex justify-center items-center gap-2.5 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
+              className="header_text flex flex-col justify-center items-start"
+              onMouseEnter={() => setHoveredItem('dashboard')}
+              onMouseLeave={() => setHoveredItem(null)}
+              onClick={() => setActiveItem('dashboard')}
             >
-              Dashboard
+              <div className="body text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%]">
+                Dashboard
+              </div>
+              {(hoveredItem === 'dashboard' || activeItem === 'dashboard') && (
+                <div className="w-[1.5625rem] h-0.5 bg-[#381207]" />
+              )}
             </Link>
-
-            {/* Logout button */}
-            <button
-              onClick={handleLogout}
-              className="flex justify-center items-center gap-2.5 py-2 px-4 rounded-lg bg-[#381207] text-white text-center font-['Poppins'] text-xl font-medium leading-[136%] hover:bg-[#4a3a2a] transition-colors"
-            >
-              Logout
-            </button>
+            <div className="flex flex-col justify-center items-center">
+              <button
+                onClick={() => {
+                  setActiveItem('logout');
+                  handleLogout();
+                }}
+                onMouseEnter={() => setHoveredItem('logout')}
+                onMouseLeave={() => setHoveredItem(null)}
+                className="cursor-pointer flex justify-center items-center gap-2.5 py-2 px-4 h-12 rounded-lg bg-[#381207] text-white text-center font-['Poppins'] text-xl font-medium leading-[136%]"
+              >
+                Logout
+              </button>
+              {(hoveredItem === 'logout' || activeItem === 'logout') && (
+                <div className="w-[1.5625rem] h-0.5" />
+              )}
+            </div>
           </>
         ) : (
           <>
-            {/* Non-authenticated user navigation */}
             <Link
               to="/become-volunteer"
-              className="flex justify-center items-center gap-2.5 body-2 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
+              className="header_text flex flex-col justify-center items-start"
+              onMouseEnter={() => setHoveredItem('volunteer')}
+              onMouseLeave={() => setHoveredItem(null)}
+              onClick={() => setActiveItem('volunteer')}
             >
-              Become a volunteer
+              <div className="body text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%]">
+                Become a volunteer
+              </div>
+              {(hoveredItem === 'volunteer' || activeItem === 'volunteer') && (
+                <div className="w-[1.5625rem] h-0.5 bg-[#381207]" />
+              )}
             </Link>
             <Link
               to="/subscribe"
-              className="flex justify-center items-center gap-2.5 body-3 text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%] hover:text-[#5b6502] transition-colors"
+              className="header_text flex flex-col justify-center items-start"
+              onMouseEnter={() => setHoveredItem('subscriptions')}
+              onMouseLeave={() => setHoveredItem(null)}
+              onClick={() => setActiveItem('subscriptions')}
             >
-              Subscriptions
-            </Link>
-
-            {/* Login options dropdown */}
-            <div className="relative group">
-              <button className="flex justify-center items-center gap-2.5 py-2 px-4 rounded-lg bg-[#381207] text-white text-center font-['Poppins'] text-xl font-medium leading-[136%] hover:bg-[#4a3a2a] transition-colors">
-                Log in
-                <svg width={16} height={16} viewBox="0 0 16 16" fill="none">
-                  <path
-                    d="M4 6L8 10L12 6"
-                    stroke="white"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <Link
-                  to="/client/login"
-                  className="block px-4 py-3 text-[#381207] hover:bg-[#ede4dc] rounded-t-lg transition-colors"
-                >
-                  Client Login
-                </Link>
-                <Link
-                  to="/organization/login"
-                  className="block px-4 py-3 text-[#381207] hover:bg-[#ede4dc] transition-colors"
-                >
-                  Organization Login
-                </Link>
-                <Link
-                  to="/volunteer/login"
-                  className="block px-4 py-3 text-[#381207] hover:bg-[#ede4dc] rounded-b-lg transition-colors"
-                >
-                  Volunteer Login
-                </Link>
+              <div className="body text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%]">
+                Subscriptions
               </div>
+              {(hoveredItem === 'subscriptions' || activeItem === 'subscriptions') && (
+                <div className="w-[1.5625rem] h-0.5 bg-[#381207]" />
+              )}
+            </Link>
+            <Link
+              to="/blog"
+              className="header_text flex flex-col justify-center items-start"
+              onMouseEnter={() => setHoveredItem('blog')}
+              onMouseLeave={() => setHoveredItem(null)}
+              onClick={() => setActiveItem('blog')}
+            >
+              <div className="body text-[#381207] font-['Poppins'] text-xl font-medium leading-[136%]">
+                Blog
+              </div>
+              {(hoveredItem === 'blog' || activeItem === 'blog') && (
+                <div className="w-[1.5625rem] h-0.5 bg-[#381207]" />
+              )}
+            </Link>
+            <div className="flex flex-col justify-center items-center">
+              <div className="relative group">
+                <button 
+                  className="flex justify-center items-center gap-2.5 py-2 px-4 h-12 rounded-lg bg-[#381207] body-6 text-white text-center font-['Poppins'] text-xl font-medium leading-[136%]"
+                >
+                  Log in
+                </button>
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <Link
+                    to="/client/login"
+                    className="block px-4 py-3 text-[#381207] hover:bg-[#ede4dc] rounded-t-lg transition-colors"
+                  >
+                    Client Login
+                  </Link>
+                  <Link
+                    to="/organization/login"
+                    className="block px-4 py-3 text-[#381207] hover:bg-[#ede4dc] transition-colors"
+                  >
+                    Organization Login
+                  </Link>
+                  <Link
+                    to="/volunteer/login"
+                    className="block px-4 py-3 text-[#381207] hover:bg-[#ede4dc] rounded-b-lg transition-colors"
+                  >
+                    Volunteer Login
+                  </Link>
+                </div>
+              </div>
+              {(hoveredItem === 'login' || activeItem === 'login') && (
+                <div className="w-[1.5625rem] h-0.5 bg-[#381207] mt-1" />
+              )}
             </div>
           </>
         )}
 
-        {/* Language selector - always visible */}
         <div className="flex justify-center items-center gap-2">
           <svg
             width={24}
@@ -148,7 +202,7 @@ const WebsiteHeader = () => {
               fill="#4B4741"
             />
           </svg>
-          <div className="body-5 text-[#4b4741] font-['Poppins'] text-xl font-medium leading-[136%]">
+          <div className="cursor-pointer body-5 text-[#4b4741] font-['Poppins'] text-xl font-medium leading-[136%]">
             English
           </div>
           <svg

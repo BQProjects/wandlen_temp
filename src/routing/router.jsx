@@ -30,6 +30,7 @@ import CameraTips from "../pages/website/CameraTips";
 import NatureWalking from "../pages/website/NatureWalking";
 import VolunteerSignupForm from "../pages/website/VolunteerSignup";
 import ChooseYourExperience from "../pages/website/ChoseYourExperience";
+import Blog from "../pages/website/Blog";
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
       {
         path: "subscribe",
         element: <Subscribe />,
+      },
+      {
+        path: "blog",
+        element: <Blog />,
       },
       {
         path: "payment",

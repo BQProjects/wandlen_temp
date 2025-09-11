@@ -15,6 +15,33 @@ const Testimonial = () => {
     {
       text: "Perfect voor mensen die niet meer kunnen wandelen, maar wel willen genieten van de natuur.",
     },
+    {
+      text: "What I hope to get out of my volunteer work at Virtual Walking is mainly connection and meaning. I would like to... do something that really matters to others, in this case to people who can no longer walk themselves, but can still feel, experience and enjoy. In addition, it gives me satisfaction to combine my love for hiking and nature Read More with my desire to contribute to the well-being of others. The idea that someone else can view a walk at a later time is really a great find!",
+    },
+    {
+      text: "Perfect voor mensen die niet meer kunnen wandelen, maar wel willen genieten van de natuur.",
+    },  
+    {
+      text: "Perfect voor mensen die niet meer kunnen wandelen, maar wel willen genieten van de natuur.",
+    },
+    {
+      text: "Perfect voor mensen die niet meer kunnen wandelen, maar wel willen genieten van de natuur.",
+    },
+    {
+      text: "Perfect voor mensen die niet meer kunnen wandelen, maar wel willen genieten van de natuur.",
+    },
+    {
+      text: "Perfect voor mensen die niet meer kunnen wandelen, maar wel willen genieten van de natuur.",
+    },
+    {
+      text: "Perfect voor mensen die niet meer kunnen wandelen, maar wel willen genieten van de natuur.",
+    },
+    {
+      text: "Perfect voor mensen die niet meer kunnen wandelen, maar wel willen genieten van de natuur.",
+    },
+    {
+      text: "Perfect voor mensen die niet meer kunnen wandelen, maar wel willen genieten van de natuur.",
+    },
   ];
 
   const nextTestimonial = () => {

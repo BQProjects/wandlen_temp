@@ -15,44 +15,43 @@ const SubscriptionCard = ({
   onClick,
 }) => (
   <div
-    className={`relative flex flex-col items-center gap-6 p-8 rounded-2xl bg-[#e2cfc3] shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${
-      isPopular ? "ring-2 ring-[#5b6502] scale-105" : ""
-    }`}
+    className={`relative flex flex-col items-center gap-6 p-8 rounded-2xl bg-secondary-soft shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${isPopular ? "ring-primary scale-105" : ""
+      } font-base`}
     onClick={onClick}
   >
     {isPopular && (
       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-        <div className="bg-[#5b6502] text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+        <div className="bg-olive text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
           Most Popular
         </div>
       </div>
     )}
 
     <div className="flex flex-col items-center gap-3 text-center">
-      <h3 className="text-2xl font-semibold text-[#381207]">{title}</h3>
+      <h3 className="text-2xl font-semibold text-brown">{title}</h3>
       <div className="flex items-baseline gap-1">
-        <span className="text-3xl font-bold text-[#381207]">€</span>
-        <span className="text-3xl font-bold text-[#381207]">{price}</span>
-        <span className="text-lg text-[#6b5b4a]">/ {period}</span>
+        <span className="text-3xl font-bold text-brown">€</span>
+        <span className="text-3xl font-bold text-brown">{price}</span>
+        <span className="text-lg text-muted-foreground">/ {period}</span>
       </div>
     </div>
 
     <div className="flex flex-col items-center gap-4 w-full">
-      <button className="w-full py-3 px-6 bg-[#5b6502] text-white font-medium rounded-lg hover:bg-[#4a5502] transition-colors duration-200 shadow-md">
+      <button className="w-full py-3 px-6 btn btn-secondary">
         {buttonText}
       </button>
-      <p className="text-sm text-[#6b5b4a] text-center">{trialText}</p>
+      <p className="text-sm text-muted-foreground text-center">{trialText}</p>
     </div>
 
     <div className="flex flex-col items-center gap-4 w-full">
-      <p className="text-sm text-[#381207] text-center leading-relaxed">
+      <p className="text-sm text-brown text-center leading-relaxed">
         {description}
       </p>
 
       <div className="flex flex-col gap-3 w-full">
         {features.map((feature, index) => (
           <div key={index} className="flex items-center gap-3">
-            <div className="flex-shrink-0 w-5 h-5 bg-[#5b6502] rounded-full flex items-center justify-center">
+            <div className="flex-shrink-0 w-5 h-5 bg-olive rounded-full flex items-center justify-center">
               <svg width={12} height={12} viewBox="0 0 12 12" fill="none">
                 <path
                   d="M10 3L4.5 8.5L2 6"
@@ -63,7 +62,7 @@ const SubscriptionCard = ({
                 />
               </svg>
             </div>
-            <span className="text-[#381207] text-sm">{feature}</span>
+            <span className="text-brown text-sm">{feature}</span>
           </div>
         ))}
       </div>
@@ -73,8 +72,8 @@ const SubscriptionCard = ({
 
 // Discount Badge Component
 const DiscountBadge = ({ discount }) => (
-  <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#e5e3df] rounded-lg shadow-md">
-    <span className="text-[#4b4741] font-medium">{discount}</span>
+  <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary rounded-lg shadow-md">
+    <span className="text-foreground font-medium">{discount}</span>
     <svg width={16} height={16} viewBox="0 0 16 16" fill="none">
       <path
         d="M13.3609 5.8076V2.6676H10.2276L8.00094 0.460938L5.8076 2.6676H2.6676V5.8076L0.460938 8.00094L2.6676 10.2276V13.3609H5.8076L8.00094 15.5676L10.2276 13.3609H13.3609V10.2276L15.5676 8.00094L13.3609 5.8076ZM5.8876 4.70094C6.54094 4.70094 7.06761 5.2276 7.06761 5.8876C7.06761 6.20056 6.94328 6.5007 6.72199 6.72199C6.5007 6.94328 6.20056 7.06761 5.8876 7.06761C5.2276 7.06761 4.70094 7.04094 4.70094 5.8876C4.70094 5.2276 5.2276 4.70094 5.8876 4.70094ZM10.1476 11.3343C9.49427 11.3343 8.9676 10.8009 8.9676 10.1476C8.9676 9.83465 9.09193 9.53451 9.31322 9.31322C9.53451 9.09193 9.83465 8.9676 10.1476 8.9676C10.8009 8.9676 11.3343 9.49427 11.3343 10.1476C11.3343 10.4623 11.2092 10.7642 10.9867 10.9867C10.7642 11.2092 10.4623 11.3343 10.1476 11.3343ZM5.6676 11.3543L4.6676 10.3543L10.3543 4.6676L11.3543 5.1676L5.6676 11.3543Z"
@@ -157,7 +156,7 @@ const Subscribe = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#ede4dc] to-[#f8f5f0]">
+    <div className="min-h-screen bg-surface font-base">
       <div className="container mx-auto px-6 py-12">
         <HeroSection />
 
@@ -166,21 +165,19 @@ const Subscribe = () => {
           <div className="bg-white p-1 rounded-lg shadow-md">
             <button
               onClick={() => setBillingPeriod("monthly")}
-              className={`px-6 py-2 rounded-md font-medium transition-all ${
-                billingPeriod === "monthly"
-                  ? "bg-[#5b6502] text-white shadow-md"
-                  : "text-[#381207] hover:bg-gray-100"
-              }`}
+              className={`px-6 py-2 rounded-md font-medium transition-all ${billingPeriod === "monthly"
+                ? "bg-olive text-white shadow-md"
+                : "text-brown hover:bg-gray-100"
+                }`}
             >
               Monthly
             </button>
             <button
               onClick={() => setBillingPeriod("yearly")}
-              className={`px-6 py-2 rounded-md font-medium transition-all relative ${
-                billingPeriod === "yearly"
-                  ? "bg-[#5b6502] text-white shadow-md"
-                  : "text-[#381207] hover:bg-gray-100"
-              }`}
+              className={`px-6 py-2 rounded-md font-medium transition-all relative ${billingPeriod === "yearly"
+                ? "bg-olive text-white shadow-md"
+                : "text-brown hover:bg-gray-100"
+                }`}
             >
               Yearly
               {billingPeriod === "yearly" && (
@@ -205,10 +202,10 @@ const Subscribe = () => {
 
         {/* Additional Info */}
         <div className="text-center max-w-3xl mx-auto">
-          <h3 className="text-2xl font-semibold text-[#381207] mb-4">
+          <h3 className="text-2xl font-semibold text-brown mb-4">
             Why Choose Our Subscription?
           </h3>
-          <p className="text-lg text-[#6b5b4a] leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             Experience the healing power of nature from the comfort of your
             home. Our carefully curated virtual walks help reduce stress,
             improve mood, and provide a sense of calm and tranquility.

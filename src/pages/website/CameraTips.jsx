@@ -9,11 +9,26 @@ import {
   Linkedin,
   Camera,
 } from "lucide-react";
+import NewsletterSection from "../../components/common/NewsletterSection";
 import Testimonial from "../../components/common/TestimonialScroll";
 import FaqQuestions from "../../components/common/FaqQuestions";
 
 const CameraTips = () => {
   const [email, setEmail] = useState("");
+
+  const [formData, setFormData] = useState({
+    email: "",
+    firstName: "",
+    lastName: "",
+    notes: "",
+  });
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = () => {
     if (email) {
@@ -26,160 +41,125 @@ const CameraTips = () => {
   return (
     <div className="min-h-screen bg-[#ede4dc]">
       {/* Hero Section */}
-      <div className="bg-[#2a341f] text-center py-12 md:py-16 px-4 md:px-8">
-        <h1 className="text-[#a6a643] text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 max-w-4xl mx-auto leading-tight">
-          Become a Volunteer with Virtual Walking
-        </h1>
-        <p className="text-white text-lg md:text-xl lg:text-2xl font-medium max-w-4xl mx-auto leading-relaxed">
-          For many — from seniors in care to those with limited mobility —
-          nature can feel far away. Virtual Walking brings Overijssel's beauty
-          indoors with calming walking videos that inspire relaxation and
-          connection. And we can't do it without you.
-        </p>
-      </div>
+      <section className="bg-[#2a341f] text-white px-4 py-16 flex items-center justify-center">
+        <div className="max-w-7xl mx-auto text-center mt-20 mb-20">
+          <h1 className="text-4xl md:text-5xl font-semibold text-[#a6a643] mb-6 font-['Poppins']">
+            Become a Volunteer with Virtual Walking
+          </h1>
+          <p className="text-xl md:text-2xl font-medium max-w-4xl mx-auto leading-relaxed">
+            For many - from seniors in care to those with limited mobility -
+            nature can feel far away. Virtual Walking brings Overijssel's beauty
+            indoors with calming walking videos that inspire relaxation and
+            connection. And we can't do it without you.
+          </p>
+        </div>
+      </section>
 
       {/* Main Content */}
-      <div className="flex flex-col items-start gap-10 p-16 max-w-7xl mx-auto">
-        <div className="flex flex-col items-start gap-2">
-          <h2 className="text-[#a6a643] text-3xl font-semibold leading-tight">
-            Video Training
-          </h2>
-          <h3 className="text-[#381207] text-5xl font-semibold leading-tight">
-            Sep 19, 2025 | Lemelerveld
-          </h3>
-        </div>{" "}
-        {/* Event Details Grid */}
-        <div className="grid lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
-          {/* Content Section */}
-          <div className="lg:col-span-2 bg-[#f7f6f4] rounded-2xl p-6 md:p-8">
-            <div className="mb-6 md:mb-8">
-              <h3 className="text-[#dd9219] text-xl md:text-2xl lg:text-3xl font-semibold mb-4">
-                What to Expect?
-              </h3>
-              <div className="text-[#381207] text-base md:text-lg space-y-3">
-                <p>
-                  • Practical camera workshop: learn how to make stable, calm,
-                  and atmospheric recordings
-                </p>
-                <p>• Tips on sound, lighting, and movement</p>
-                <p>• Practice together with the camera</p>
-                <p>• Ask questions to the video coach</p>
-                <p>• Lunch and a walk with other volunteers</p>
-              </div>
-            </div>
-
-            <div className="mb-6 md:mb-8">
-              <h3 className="text-[#dd9219] text-xl md:text-2xl lg:text-3xl font-semibold mb-4">
-                Why Join?
-              </h3>
-              <p className="text-[#381207] text-base md:text-lg leading-relaxed">
-                Whether you're just starting out or already have filming
-                experience, this day will help you create beautiful walking
-                videos for older adults (with dementia). It's also a great way
-                to meet other volunteers and share experiences.
-              </p>
-            </div>
-
-                      <button
-                          onClick={() => window.location.href = "/volunteer-signup"}
-                          className="bg-[#a6a643] text-white px-6 md:px-8 py-3 rounded-lg text-lg md:text-xl font-medium hover:bg-[#8d8f37] transition-colors duration-300">
-              Sign up now for the meeting
-            </button>
-          </div>
-
-          {/* Practical Information Sidebar */}
-          <div className="bg-[#381207] rounded-2xl p-6 md:p-8 text-white">
-            <h3 className="text-[#dd9219] text-xl md:text-2xl lg:text-3xl font-semibold mb-6 md:mb-8">
-              Practical Information
+      <div className="flex flex-col mx-auto">
+        <div className="max-w-7xl mx-auto p-16 w-full">
+          <div className="flex flex-col items-start gap-2 mb-5 px-2">
+            <h2 className="text-[#a6a643] text-3xl font-semibold leading-tight">
+              Video Training
+            </h2>
+            <h3 className="text-[#381207] text-5xl font-semibold leading-tight">
+              Sep 19, 2025 | Lemelerveld
             </h3>
-
-            <div className="space-y-6 md:space-y-8">
-              {/* Location */}
-              <div className="flex items-start gap-4">
-                <MapPin className="text-[#ede4dc] w-6 h-6 md:w-8 md:h-8 flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="text-[#ede4dc] text-lg md:text-xl font-semibold mb-1">
-                    Location
-                  </h4>
-                  <p className="text-[#ede4dc] text-base md:text-lg">
-                    Dominee C. Keersstraat 79
-                    <br />
-                    8151 AB Lemelerveld
-                  </p>
-                </div>
-              </div>
-
-              {/* Time */}
-              <div className="flex items-start gap-4">
-                <Clock className="text-[#ede4dc] w-6 h-6 md:w-8 md:h-8 flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="text-[#ede4dc] text-lg md:text-xl font-semibold mb-1">
-                    Time
-                  </h4>
-                  <p className="text-[#ede4dc] text-base md:text-lg">
-                    10:00 AM to 2:30 PM
-                  </p>
-                </div>
-              </div>
-
-              {/* Target Audience */}
-              <div className="flex items-start gap-4">
-                <Users className="text-[#ede4dc] w-6 h-6 md:w-8 md:h-8 flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="text-[#ede4dc] text-lg md:text-xl font-semibold mb-1">
-                    For whom?
-                  </h4>
-                  <p className="text-[#ede4dc] text-base md:text-lg">
-                    Volunteers who create videos for Virtual Walking (or want to
-                    get started)
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-        {/* FAQ Section */}
-        <FaqQuestions />
-        {/* Testimonials Section */}
-        <Testimonial />
-        {/* Newsletter Section */}
-        <div className="bg-white rounded-2xl p-6 md:p-8 mb-12 md:mb-16">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
-            <div>
-              <h3 className="text-[#381207] text-xl md:text-2xl font-semibold mb-6">
-                Stay Inspired
-              </h3>
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-[#381207] font-medium mb-2">
-                    Email address
-                  </label>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email address"
-                    className="w-full px-4 py-3 rounded-lg border border-[#cbcbcb] text-[#381207] placeholder-[#8d8d8d] focus:outline-none focus:ring-2 focus:ring-[#a6a643] focus:border-transparent"
-                  />
+          {/* Event Details Grid */}
+          <div className="grid lg:grid-cols-3 gap-6 pt-5 pb-5 bg-[#f7f6f4] rounded-2xl px-4 md:px-6">
+            {/* Content Section */}
+            <div className="lg:col-span-2 rounded-2xl p-6 md:p-8">
+              <div className="mb-6 md:mb-8">
+                <h3 className="text-[#dd9219] text-xl md:text-2xl lg:text-3xl font-semibold mb-4">
+                  What to Expect?
+                </h3>
+                <div className="text-[#381207] text-base md:text-lg space-y-3">
+                  <p>
+                    • Practical camera workshop: learn how to make stable, calm,
+                    and atmospheric recordings
+                  </p>
+                  <p>• Tips on sound, lighting, and movement</p>
+                  <p>• Practice together with the camera</p>
+                  <p>• Ask questions to the video coach</p>
+                  <p>• Lunch and a walk with other volunteers</p>
                 </div>
-                <button
-                  onClick={handleSubmit}
-                  className="bg-[#5b6502] text-white px-6 md:px-8 py-3 rounded-lg font-medium hover:bg-[#4a5402] transition-colors duration-300"
-                >
-                  Subscribe
-                </button>
               </div>
-            </div>
-            <div className="bg-gradient-to-br from-[#39442c]/20 to-[#a6a643]/10 rounded-2xl h-48 md:h-64 flex items-center justify-center">
-              <div className="text-center">
-                <Mail className="w-12 h-12 text-[#39442c] mx-auto mb-4" />
-                <p className="text-[#39442c] text-lg font-medium">
-                  Get Updates & Tips
+
+              <div className="mb-6 md:mb-8">
+                <h3 className="text-[#dd9219] text-xl md:text-2xl lg:text-3xl font-semibold mb-4">
+                  Why Join?
+                </h3>
+                <p className="text-[#381207] text-base md:text-lg leading-relaxed">
+                  Whether you're just starting out or already have filming
+                  experience, this day will help you create beautiful walking
+                  videos for older adults (with dementia). It's also a great way
+                  to meet other volunteers and share experiences.
                 </p>
               </div>
+              <button
+                onClick={() => (window.location.href = "/volunteer-signup")}
+                className="bg-[#a6a643] text-white px-6 md:px-8 py-3 rounded-lg text-lg md:text-xl font-medium hover:bg-[#8d8f37] transition-colors duration-300"
+              >
+                Sign up now for the meeting
+              </button>
+            </div>
+
+            {/* Practical Information Sidebar */}
+            <div className="bg-[#381207] rounded-2xl p-6 md:p-8 text-white">
+              <h3 className="text-[#dd9219] text-xl md:text-2xl lg:text-3xl font-semibold mb-6 md:mb-8">
+                Practical Information
+              </h3>
+
+              <div className="space-y-6 md:space-y-8">
+                {/* Location */}
+                <div className="flex items-start gap-4">
+                  <MapPin className="text-[#ede4dc] w-6 h-6 md:w-8 md:h-8 flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-[#ede4dc] text-lg md:text-xl font-semibold mb-1">
+                      Location
+                    </h4>
+                    <p className="text-[#ede4dc] text-base md:text-lg">
+                      Dominee C. Keersstraat 79
+                      <br />
+                      8151 AB Lemelerveld
+                    </p>
+                  </div>
+                </div>
+
+                {/* Time */}
+                <div className="flex items-start gap-4">
+                  <Clock className="text-[#ede4dc] w-6 h-6 md:w-8 md:h-8 flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-[#ede4dc] text-lg md:text-xl font-semibold mb-1">
+                      Time
+                    </h4>
+                    <p className="text-[#ede4dc] text-base md:text-lg">
+                      10:00 AM to 2:30 PM
+                    </p>
+                  </div>
+                </div>
+
+                {/* Target Audience */}
+                <div className="flex items-start gap-4">
+                  <Users className="text-[#ede4dc] w-6 h-6 md:w-8 md:h-8 flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-[#ede4dc] text-lg md:text-xl font-semibold mb-1">
+                      For whom?
+                    </h4>
+                    <p className="text-[#ede4dc] text-base md:text-lg">
+                      Volunteers who create videos for Virtual Walking (or want
+                      to get started)
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <FaqQuestions />
+        <Testimonial />
+        <NewsletterSection />
       </div>
 
       {/* Footer */}

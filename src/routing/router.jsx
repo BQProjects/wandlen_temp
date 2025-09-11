@@ -42,6 +42,7 @@ import LocationRequest from "../pages/admin/LocationRequest";
 import ManageVideos from "../pages/admin/ManageVideos";
 import ManageSubscription from "../pages/admin/ManageSubscription";
 import SubscriptionOverview from "../pages/admin/SubscriptionOverview";
+import Blog from "../pages/website/Blog";
 
 export const router = createBrowserRouter([
   {

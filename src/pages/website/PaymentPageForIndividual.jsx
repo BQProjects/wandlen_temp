@@ -202,7 +202,6 @@ const PaymentPageForIndividual = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Form */}
           <div className="lg:col-span-2 space-y-6">
-
             {/* Step 2: Additional Info */}
             {currentStep === 1 && (
               <div className="bg-white p-6 rounded-2xl border border-gray-200">

@@ -1,47 +1,64 @@
 import { createBrowserRouter } from "react-router-dom";
-import Layout from "../Layout";
+
+// Layout imports
+import AdminLayout from "../pages/admin/AdminLayout";
 import ClientLayout from "../pages/client/ClientLayout";
+import Layout from "../Layout";
+import OrganizationLayout from "../pages/organization/OrganizationLayout";
 import VolunteerLayout from "../pages/volunteer/VolunteerLayout";
+
+// Website page imports (alphabetized)
+import Aran from "../pages/website/Aran";
+import BecomeVolunteer from "../pages/website/BecomeVolunteer";
+import CameraTips from "../pages/website/CameraTips";
+import ChooseYourExperience from "../pages/website/ChoseYourExperience";
+import HowItWorks from "../pages/volunteer/HOwItWork";
+import NatureWalking from "../pages/website/NatureWalking";
 import OurApproach from "../pages/website/OurApproach";
+import PaymentPageForIndividual from "../pages/website/PaymentPageForIndividual";
+import RequestAQuoteForm from "../pages/website/RequestAQuoteForm";
+import Subscribe from "../pages/website/Subscribe";
+import VideoTraining from "../pages/website/VideoTraning";
+import VolunteerSignupForm from "../pages/website/VolunteerSignup";
+import Blog from "../pages/website/Blog";
+
+// Client page imports (alphabetized)
 import Login from "../pages/client/Login";
 import PatientProfile from "../pages/client/PatientProfile";
+import SelectVideo from "../pages/client/SelectVideo";
+import VideoClient from "../pages/client/VideoClient";
+
+// Organization page imports (alphabetized)
+import AllVideos from "../pages/organization/AllVideos";
+import ManageClients from "../pages/organization/ManageClients";
 import OrgLogin from "../pages/organization/Login";
 import OrgSignup from "../pages/organization/Signup";
-import RequestAQuoteForm from "../pages/website/RequestAQuoteForm";
-import ManageClients from "../pages/organization/ManageClients";
 import OrganizationProfile from "../pages/organization/OrganizationProfile";
-import VolunteerLogin from "../pages/volunteer/VolunteerLogin";
-import VolunteerSignup from "../pages/volunteer/VolunteerSignup";
-import VolunteerProfile from "../pages/volunteer/VolunteerProfile";
+import VideoOrganization from "../pages/organization/VideoOrganization";
+
+// Volunteer page imports (alphabetized)
 import VolunteerCreateVideo from "../pages/volunteer/VolunteerCreateVideo";
-import SelectVideo from "../pages/client/SelectVideo";
-import Subscribe from "../pages/website/Subscribe";
-import PaymentPageForIndividual from "../pages/website/PaymentPageForIndividual";
-import Video from "../pages/client/video";
-import Aran from "../pages/website/Aran";
-import AllVideos from "../pages/organization/AllVideos";
 import VolunteerHome from "../pages/volunteer/VolunteerHome";
-import BecomeVolunteer from "../pages/website/BecomeVolunteer";
-import OrganizationLayout from "../pages/organization/OrganizationLayout";
-import ProtectedRoute from "../components/ProtectedRoute";
-import HowItWorks from "../pages/volunteer/HOwItWork";
-import VideoTraining from "../pages/website/VideoTraning";
-import CameraTips from "../pages/website/CameraTips";
-import NatureWalking from "../pages/website/NatureWalking";
-import VolunteerSignupForm from "../pages/website/VolunteerSignup";
-import ChooseYourExperience from "../pages/website/ChoseYourExperience";
-import AdminLogin from "../pages/admin/AdminLogin";
-import AdminLayout from "../pages/admin/AdminLayout";
-import AdminDashboard from "../pages/admin/AdminDashboard";
-import ManageQuote from "../pages/admin/ManageQuote";
+import VolunteerLogin from "../pages/volunteer/VolunteerLogin";
+import VolunteerProfile from "../pages/volunteer/VolunteerProfile";
+import VolunteerSignup from "../pages/volunteer/VolunteerSignup";
+import VideoVolunteer from "../pages/volunteer/VideoVolunteer";
+
+// Admin page imports (alphabetized)
 import AddCustomer from "../pages/admin/AddCustomer";
-import OrganizationCreated from "../pages/admin/OrganizationCreated";
-import ManageVolunteer from "../pages/admin/ManageVolunteer";
-import VolunteerDetail from "../pages/admin/VolunteerDetail";
+import AdminDashboard from "../pages/admin/AdminDashboard";
+import AdminLogin from "../pages/admin/AdminLogin";
 import LocationRequest from "../pages/admin/LocationRequest";
-import ManageVideos from "../pages/admin/ManageVideos";
+import ManageQuote from "../pages/admin/ManageQuote";
 import ManageSubscription from "../pages/admin/ManageSubscription";
+import ManageVideos from "../pages/admin/ManageVideos";
+import ManageVolunteer from "../pages/admin/ManageVolunteer";
+import OrganizationCreated from "../pages/admin/OrganizationCreated";
 import SubscriptionOverview from "../pages/admin/SubscriptionOverview";
+import VolunteerDetail from "../pages/admin/VolunteerDetail";
+
+// Component imports
+import ProtectedRoute from "../components/ProtectedRoute";
 
 export const router = createBrowserRouter([
   {
@@ -63,6 +80,10 @@ export const router = createBrowserRouter([
       {
         path: "subscribe",
         element: <Subscribe />,
+      },
+      {
+        path: "blog",
+        element: <Blog />,
       },
       {
         path: "payment",
@@ -89,11 +110,7 @@ export const router = createBrowserRouter([
         element: <RequestAQuoteForm />,
       },
       {
-        path: "/request-quote",
-        element: <RequestAQuoteForm />,
-      },
-      {
-        path: "/choose-experience",
+        path: "choose-experience",
         element: <ChooseYourExperience />,
       },
     ],
@@ -137,8 +154,8 @@ export const router = createBrowserRouter([
         element: <SelectVideo />,
       },
       {
-        path: "video",
-        element: <Video />,
+        path: "video/:id",
+        element: <VideoClient />,
       },
     ],
   },
@@ -162,6 +179,10 @@ export const router = createBrowserRouter([
       {
         path: "all-videos",
         element: <AllVideos />,
+      },
+      {
+        path: "all-videos/video/:id",
+        element: <VideoOrganization />,
       },
     ],
   },
@@ -189,6 +210,10 @@ export const router = createBrowserRouter([
       {
         path: "/volunteer/how-it-works",
         element: <HowItWorks />,
+      },
+      {
+        path: "video/:id",
+        element: <VideoVolunteer />,
       },
     ],
   },

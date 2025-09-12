@@ -1,4 +1,3 @@
-import "./App.css";
 import { RouterProvider } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import { DatabaseProvider } from "./contexts/DatabaseContext";
@@ -7,13 +6,13 @@ import { router } from "./routing/router";
 
 function App() {
   return (
-    <DatabaseProvider>
-      <AuthProvider>
+    <AuthProvider>
+      <DatabaseProvider>
         <StateManagementProvider>
           <RouterProvider router={router} />
         </StateManagementProvider>
-      </AuthProvider>
-    </DatabaseProvider>
+      </DatabaseProvider>
+    </AuthProvider>
   );
 }
 
